@@ -10,17 +10,23 @@ interface ConfigureOptions {
   headers?: any;
 }
 
-interface UseRequest<T>{
-  error:Ref<string>;
-  loading:Ref<boolean>;
-  response:Ref<UnwrapRef<T>>
+interface UseRequest<T> {
+  error: Ref<string>;
+  loading: Ref<boolean>;
+  response: Ref<UnwrapRef<T>>;
 }
 
-const useRequest = <T>({ url, method, body, headers }: ConfigureOptions): UseRequest<T>=> {
+const useRequest = <T>({
+  url,
+  method,
+  body,
+  headers,
+}: ConfigureOptions): UseRequest<T> => {
   const response = ref<T>(null);
   const error = ref("");
   const loading = ref(true);
-  axios[method](url, body, headers)
+  console.log(headers, url);
+  axios[method](url, body, { headers })
     .then((result) => {
       response.value = result.data;
     })
@@ -30,7 +36,7 @@ const useRequest = <T>({ url, method, body, headers }: ConfigureOptions): UseReq
     .finally(() => {
       loading.value = false;
     });
-  return {error, loading, response};
+  return { error, loading, response };
 };
 
 export default useRequest;
