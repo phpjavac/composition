@@ -3670,3 +3670,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zcomposition@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/zcomposition/-/zcomposition-0.0.1.tgz#7e14587300fc7ca64d26c66ddf87d01d3f4786bb"
+  integrity sha512-IJa/XuKRgT5UrYtWuPFZmTyuzoyQt7yK3/tPJoJpvY3QZPNB7Zo1c7ZfgZi5ZaYOZK4gN/PvY2JBc7hP28ppjA==
+  dependencies:
+    axios "^0.21.4"
+    vue "^3.2.11"
