@@ -1,3 +1,4 @@
-import useRequest from "./useRequest";
+import { useRequest, Request } from "./useRequest";
+import useSize from "./useSize";
 
-export default { useRequest };
+export { useRequest, Request, useSize };

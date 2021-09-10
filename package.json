@@ -2,14 +2,19 @@
   "name": "zcomposition",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.4",
     "vue": "^3.2.11"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.25",
+    "zcomposition": "file:"
   }
 }

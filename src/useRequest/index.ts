@@ -10,20 +10,14 @@ interface ConfigureOptions {
   headers?: any;
 }
 
-interface UseRequest<T> {
-  error: Ref<string>;
-  loading: Ref<boolean>;
-  response: Ref<UnwrapRef<T>>;
-}
-
-class Axios {
+class Request {
   private static instance: AxiosStatic;
 
   public static getInstance(): AxiosStatic {
-    if (!Axios.instance) {
-      Axios.instance = axios;
+    if (!Request.instance) {
+      Request.instance = axios;
     }
-    return Axios.instance;
+    return Request.instance;
   }
 
   /**
@@ -31,7 +25,10 @@ class Axios {
    * @param config -> AxiosRequestConfig
    */
   public static setOption(config: AxiosRequestConfig) {
-    Axios.getInstance().defaults = config;
+    const k = Object.keys(config);
+    k.forEach((element) => {
+      Request.getInstance().defaults[element] = config[element];
+    });
   }
 
   /**
@@ -41,9 +38,11 @@ class Axios {
     func: (
       // eslint-disable-next-line no-unused-vars
       arg0: AxiosRequestConfig
-    ) => AxiosRequestConfig | Promise<AxiosRequestConfig>
+    ) => AxiosRequestConfig | Promise<AxiosRequestConfig>,
+    // eslint-disable-next-line no-unused-vars
+    errorFunc?: (error: any) => any
   ) {
-    Axios.getInstance().interceptors.request.use(func);
+    Request.getInstance().interceptors.request.use(func, errorFunc);
   }
 
   /**
@@ -53,10 +52,18 @@ class Axios {
     func: (
       // eslint-disable-next-line no-unused-vars
       value: AxiosResponse<any>
-    ) => AxiosResponse<any> | Promise<AxiosResponse<any>>
+    ) => AxiosResponse<any> | Promise<AxiosResponse<any>>,
+    // eslint-disable-next-line no-unused-vars
+    errorFunc?: (error: any) => any
   ) {
-    Axios.getInstance().interceptors.response.use(func);
+    Request.getInstance().interceptors.response.use(func, errorFunc);
   }
+}
+
+interface UseRequest<T> {
+  error: Ref<string>;
+  loading: Ref<boolean>;
+  response: Ref<UnwrapRef<T>>;
 }
 
 const useRequest = <T>({
@@ -68,7 +75,7 @@ const useRequest = <T>({
   const response = ref<T>(null);
   const error = ref("");
   const loading = ref(true);
-  Axios.getInstance()
+  Request.getInstance()
     [method](url, body, { headers })
     .then((result) => {
       response.value = result.data;
@@ -82,4 +89,4 @@ const useRequest = <T>({
   return { error, loading, response };
 };
 
-export default useRequest;
+export { useRequest, Request };
