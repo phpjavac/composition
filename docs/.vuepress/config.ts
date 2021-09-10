@@ -3,7 +3,7 @@ import type { DefaultThemeOptions } from "vuepress";
 
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
-  base:'/phpjavac',
+  base:'/composition',
   title: "zComposition",
   description: "zComposition文档",
   themeConfig: {
