@@ -20,6 +20,10 @@ export default defineUserConfig<DefaultThemeOptions>({
             text: "useRequest",
             link: "/composition/useRequest",
           },
+          {
+            text: "useSize",
+            link: "/composition/useSize",
+          },
         ],
       },
     ],
