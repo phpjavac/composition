@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang='ts'>
-import {useSize} from "zcomposition";
+import { useSize } from "zcomposition";
 import { ref, onMounted, reactive, watch } from "vue";
 
 const divRef = ref<HTMLElement | null>(null);
