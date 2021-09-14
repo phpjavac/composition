@@ -53,7 +53,7 @@ const { error, loading, response } = useRequest<Hitokoto>({
 
 
 ```typescript
-import { useRequest, Request } from "composition";
+import { useRequest, Request } from "zcomposition";
 
 // 设置baseUrl
 Request.setOption({ baseURL: "https://v1.hitokoto.cn/" });
