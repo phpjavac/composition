@@ -12,8 +12,8 @@
   "dependencies": {
     "axios": "^0.21.4",
     "lodash": "^4.17.21",
-    "vue": "^3.2.11",
-    "zcomposition": "^0.0.1"
+    "zcomposition": "^0.0.3",
+    "vue": "^3.2.11"
   },
   "devDependencies": {
     "vuepress": "^2.0.0-beta.26"
