@@ -36,7 +36,6 @@ jobs:
 
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile
 
       # 运行构建脚本
