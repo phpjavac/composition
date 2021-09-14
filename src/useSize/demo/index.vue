@@ -4,7 +4,7 @@
             <textarea></textarea>
         </div>
         <div>
-            <span>宽： </span>
+            <span>宽：</span>
             <span>{{ size.width }}</span>
             <span>高：</span>
             <span>{{ size.height }}</span>
@@ -22,10 +22,5 @@ const widthAndHeight = ref({
     height: 0
 });
 const size = ref<{ width: number, height: number }>({ width: 0, height: 0 })
-onMounted(() => {
-    if (divRef.value) {
-        size.value = useSize(divRef.value);
-    }
-
-})
+size.value = useSize(divRef, () => console.log(1));
 </script>
