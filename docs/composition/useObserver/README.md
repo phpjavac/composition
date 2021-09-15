@@ -16,7 +16,27 @@
 
 <script  lang="ts">
 import { defineComponent,ref } from 'vue';
-import {useObserver} from '../index';
+import {useObserver} from 'zcomposition';
+
+export default defineComponent({
+    setup() {
+        const targetDom = ref();
+        const finalResult = useObserver(targetDom);
+        return {finalResult,targetDom}
+    },
+})
+</script>
+``vue
+<template>
+<div class="targetWrapper">
+    <div ref="targetDom" class="targetDomS"></div>
+    <div class='testBlock'>{{finalResult}}</div>
+</div>
+</template>
+
+<script  lang="ts">
+import { defineComponent,ref } from 'vue';
+import {useObserver} from 'zcomposition';
 
 export default defineComponent({
     setup() {
