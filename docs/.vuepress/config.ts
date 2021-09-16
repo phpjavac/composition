@@ -10,6 +10,10 @@ const children = [
     text: "useSize",
     link: "/composition/useSize",
   },
+  {
+     text: "useDownloader",
+     link: "/composition/useDownloader/"
+  }
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
