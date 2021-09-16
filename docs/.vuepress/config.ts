@@ -13,7 +13,11 @@ const children = [
   {
     text: "useDownloader",
     link: "/composition/useDownloader/"
-  }
+  },
+  {
+    text: "useFullscreen",
+    link: "/composition/useFullscreen",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
@@ -39,24 +43,7 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
       {
         text: "compositionApi",
-<<<<<<< HEAD
-        children: [
-          {
-            text: "useRequest",
-            link: "/composition/useRequest",
-          },
-          {
-            text: "useSize",
-            link: "/composition/useSize",
-          },
-          {
-            text: "useFullscreen",
-            link: "/composition/useFullscreen",
-          },
-        ],
-=======
         children: children,
->>>>>>> 50db9b29f1ddbfb65288cf0b5e1c601d8918316b
       },
     ],
   },
