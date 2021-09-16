@@ -1,10 +1,6 @@
 {
   "name": "zcomposition",
-<<<<<<< HEAD
-  "version": "0.0.12",
-=======
   "version": "0.0.3",
->>>>>>> 50db9b29f1ddbfb65288cf0b5e1c601d8918316b
   "description": "",
   "main": "src/index.ts",
   "scripts": {
@@ -16,14 +12,9 @@
   "dependencies": {
     "axios": "^0.21.4",
     "lodash": "^4.17.21",
-<<<<<<< HEAD
     "screenfull": "^5.1.0",
     "vue": "^3.2.11",
-    "zcomposition": "file:"
-=======
-    "vue": "^3.2.11",
     "zcomposition": "0.0.3"
->>>>>>> 50db9b29f1ddbfb65288cf0b5e1c601d8918316b
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.3",
