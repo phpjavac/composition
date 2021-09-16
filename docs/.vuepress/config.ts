@@ -18,12 +18,16 @@ export default defineUserConfig<DefaultThemeOptions>({
         children: [
           {
             text: "useRequest",
-            link: "/composition/useRequest",
+            link: "/composition/useRequest/",
           },
           {
             text: "useSize",
-            link: "/composition/useSize",
+            link: "/composition/useSize/",
           },
+          {
+            text: "useDownloader",
+            link: "/composition/useDownloader/"
+          }
         ],
       },
     ],
