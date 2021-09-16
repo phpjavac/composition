@@ -13,11 +13,11 @@
     "axios": "^0.21.4",
     "lodash": "^4.17.21",
     "vue": "^3.2.11",
-    "zcomposition": "0.0.3"
+    "zcomposition": "0.0.3",
+    "file-saver": "^2.0.5"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.3",
-    "file-saver": "^2.0.5",
     "vuepress": "^2.0.0-beta.26"
   }
 }
