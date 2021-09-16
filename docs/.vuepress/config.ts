@@ -13,6 +13,10 @@ const children = [
   {
     text: "useDownloader",
     link: "/composition/useDownloader/"
+  },
+  {
+    text: "useClickAway",
+    link: "/composition/useClickAway/"
   }
 ];
 export default defineUserConfig<DefaultThemeOptions>({
