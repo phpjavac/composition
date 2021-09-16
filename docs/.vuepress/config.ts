@@ -17,7 +17,11 @@ const children = [
   {
     text: "useClickAway",
     link: "/composition/useClickAway/"
-  }
+  },
+  {
+    text: "useFullscreen",
+    link: "/composition/useFullscreen",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
