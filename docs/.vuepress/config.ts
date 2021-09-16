@@ -11,8 +11,8 @@ const children = [
     link: "/composition/useSize",
   },
   {
-     text: "useDownloader",
-     link: "/composition/useDownloader/"
+    text: "useDownloader",
+    link: "/composition/useDownloader/"
   }
 ];
 export default defineUserConfig<DefaultThemeOptions>({
