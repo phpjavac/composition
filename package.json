@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.4",
+    "file-saver": "^2.0.5",
     "lodash": "^4.17.21",
     "screenfull": "^5.1.0",
     "vue": "^3.2.11",
@@ -18,7 +19,6 @@
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.3",
-    "file-saver": "^2.0.5",
     "vuepress": "^2.0.0-beta.26"
   }
 }

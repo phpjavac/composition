@@ -15,6 +15,10 @@ const children = [
     link: "/composition/useDownloader/"
   },
   {
+    text: "useClickAway",
+    link: "/composition/useClickAway/"
+  },
+  {
     text: "useFullscreen",
     link: "/composition/useFullscreen",
   },
