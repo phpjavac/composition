@@ -26,7 +26,7 @@ export default defineComponent({
     },
 })
 </script>
-``vue
+```vue
 <template>
 <div class="targetWrapper">
     <div ref="targetDom" class="targetDomS"></div>
