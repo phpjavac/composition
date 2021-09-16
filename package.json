@@ -15,7 +15,7 @@
     "lodash": "^4.17.21",
     "screenfull": "^5.1.0",
     "vue": "^3.2.11",
-    "zcomposition": "0.0.3"
+    "zcomposition": "^0.0.4"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.3",
