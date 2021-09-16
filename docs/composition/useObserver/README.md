@@ -60,6 +60,8 @@ export default defineComponent({
         height 100px
         width 100%
 </style>
+```
+
 ## useSize OPTION
 
 | 参数      | 说明                      | 类型                   | 默认值 |
