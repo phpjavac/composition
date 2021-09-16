@@ -1,6 +1,6 @@
 import { Ref, ref } from "vue";
 import { safeOnMounted } from "../utils";
-import { debounce } from "loadsh";
+import { debounce } from "lodash";
 
 
 /**

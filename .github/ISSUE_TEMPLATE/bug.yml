@@ -1,0 +1,64 @@
+name: bug
+description: bug-issues 模板
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - octocat
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: bug描述
+      description: bug的重现方式和其他与bug相关的内容
+      placeholder: Tell us what you see!
+      value: "bug描述"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: 版本号
+      description: 选择运行的版本号
+      options:
+        - 0.0.1 (Default)
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: 在哪些浏览器上看到这个问题？
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志输出
+      description: 请复制并粘贴任何相关的日志输出。这将自动格式化为代码，因此不需要反勾号。
+      render: shell
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+# 后续可能会用到的类型
+#  - type: markdown
+#    attributes:
+#      value: |
+#        Thanks for taking the time to fill out this bug report!
+#  - type: checkboxes
+#    id: terms
+#    attributes:
+#      label: Code of Conduct
+#      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+#      options:
+#        - label: I agree to follow this project's Code of Conduct
+#          required: true
