@@ -24,6 +24,10 @@ export default defineUserConfig<DefaultThemeOptions>({
             text: "useSize",
             link: "/composition/useSize",
           },
+          {
+            text: "useFullscreen",
+            link: "/composition/useFullscreen",
+          },
         ],
       },
     ],

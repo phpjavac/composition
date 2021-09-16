@@ -1,24 +1,27 @@
 <template>
   <div>
-    <div ref='divRef' class="divStyle">
-      111~
+    <div ref='divRef' style="padding: 16px; background: #fff">
+      <div  class="divStyle" ref='divRef1'>
+        111~
+      </div>
+        <button @click='setFull'>setFull</button>
+        <button @click='exitFull'>exitFull</button>
+        <button @click='toggleFull'>toggleFull</button>
+        <div>
+          {{isFullscreen}}
+        </div>
+
     </div>
-    <button @click='full'>点击</button>
   </div>
 </template>
 
 <script setup lang='ts'>
 import useFullscreen from "../index";
-import { ref } from 'vue'
+import { Result } from "../index"
+import { ref, Ref, } from 'vue'
 
 const divRef = ref<HTMLElement | null>(null);
-
-function full() {
-  if(divRef.value) {
-    useFullscreen(divRef.value)
-  }
-}
-
+const { setFull, exitFull, toggleFull, isFullscreen } = useFullscreen(divRef)
 </script>
 
 <style scoped>
