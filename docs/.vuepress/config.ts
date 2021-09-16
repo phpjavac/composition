@@ -13,7 +13,11 @@ const children = [
   {
     text: "useDownloader",
     link: "/composition/useDownloader/"
-  }
+  },
+  {
+    text: "useFullscreen",
+    link: "/composition/useFullscreen",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
