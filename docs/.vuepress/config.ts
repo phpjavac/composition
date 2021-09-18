@@ -22,6 +22,10 @@ const children = [
     text: "useFullscreen",
     link: "/composition/useFullscreen",
   },
+  {
+    text: "useKeyPress",
+    link: "/composition/useKeyPress",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
