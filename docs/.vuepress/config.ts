@@ -30,7 +30,7 @@ const children = [
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
   base: "/composition/",
-  title: "VueZApi",
+  title: "VueZApi",
   description: "Vue3的compositionApi's",
   themeConfig: {
     logo: "/images/logo.jpg",
