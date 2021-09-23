@@ -1,6 +1,14 @@
+/*
+ * @Author: your name
+ * @Date: 2021-09-23 10:09:30
+ * @LastEditTime: 2021-09-23 10:45:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \zcomposition\docs\.vuepress\config.ts
+ */
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
-
+const path = require('path')
 const children = [
   {
     text: "useRequest",
@@ -21,6 +29,14 @@ const children = [
   {
     text: "useFullscreen",
     link: "/composition/useFullscreen",
+  },
+  {
+    text: "useHover",
+    link: "/composition/useHover",
+  },
+  {
+    text: "useClipboard",
+    link: "/composition/useClipboard",
   },
   {
     text: "useKeyPress",
@@ -54,5 +70,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         children: children,
       },
     ],
+
   },
 });
