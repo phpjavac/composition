@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-09-23 10:29:06
- * @LastEditTime: 2021-09-23 11:30:53
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \zcomposition\docs\composition\useHover\README.md
--->
 # useHover
 
 一个用于追踪 dom 元素是否有鼠标悬停的 Hook。
@@ -13,12 +5,13 @@
 ## 基本用法,传入Dom元素
 <script setup lang='ts'>
 import { useHover } from "zcomposition";
-import { ref, onMounted } from "vue";
- const isHovering = useHover(() => document.getElementById('divRef'));
+import { ref, onMounted } from "vue";   
+ const divRef = ref()
+ const isHovering = useHover(() =>divRef.value);
 </script>
 
 <div>
-    <div id="divRef"
+    <div ref="divRef"
       style="width: 200px; height: 200px; background:pink"
     >
     </div>isHovering:<span style="color:red"> {{ isHovering }} </span>
