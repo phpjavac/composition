@@ -1,6 +1,6 @@
 {
   "name": "zcomposition",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
@@ -15,7 +15,7 @@
     "lodash": "^4.17.21",
     "screenfull": "^5.1.0",
     "vue": "^3.2.11",
-    "zcomposition": "0.0.5"
+    "zcomposition": "0.0.6"
   },
   "devDependencies": {
     "@types/file-saver": "^2.0.3",
