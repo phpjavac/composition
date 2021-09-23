@@ -57,4 +57,4 @@ const { text, copy, copied, isSupported } = useClipboard({ target })
 | -------    | ------------------- | ----------- | ------ |
 | target | 目标对象	         | (() => HTMLElement) | HTMLElement | React.RefObject	    | -       |
 | text   | 剪贴板中的文本          | string   | -       |
-| copy   | 复制时的事件          | (text)=>Promise<void>   | -       |
+| copy   | 复制时的事件          | (text)=>Promise\<void\>   | -       |
