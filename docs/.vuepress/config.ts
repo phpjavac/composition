@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-09-23 10:09:30
+ * @LastEditTime: 2021-09-23 10:45:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \zcomposition\docs\.vuepress\config.ts
+ */
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
 const path = require('path')
@@ -23,14 +31,19 @@ const children = [
     link: "/composition/useFullscreen",
   },
   {
+<<<<<<< HEAD
     text: "useClipboard",
     link: "/composition/useClipboard",
+=======
+    text: "useHover",
+    link: "/composition/useHover",
+>>>>>>> 0e70c8f4de748fed456a352f0600c5ad72ee2e42
   },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
   base: "/composition/",
-  title: "VueZApi",
+  title: "VueZApi",
   description: "Vue3的compositionApi's",
   themeConfig: {
     logo: "/images/logo.jpg",
