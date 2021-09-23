@@ -22,7 +22,7 @@ import { ref, onMounted } from "vue";
 ```vue
 <template>
     <div>
-    <div id="divRef"
+    <div ref="divRef"
          style="width: 200px; height: 200px; background:pink"
     >
     </div>isHovering:<span style="color: blue"> {{ isHovering }} </span>
@@ -32,6 +32,7 @@ import { ref, onMounted } from "vue";
 <script setup lang='ts'>
 import {useSize} from "zcomposition";
 import { ref, onMounted, reactive, watch } from "vue";
+    const divRef = ref()
     const isHovering = useHover(() => document.getElementById('divRef'));
 
 </script>
