@@ -31,13 +31,12 @@ const children = [
     link: "/composition/useFullscreen",
   },
   {
-<<<<<<< HEAD
-    text: "useClipboard",
-    link: "/composition/useClipboard",
-=======
     text: "useHover",
     link: "/composition/useHover",
->>>>>>> 0e70c8f4de748fed456a352f0600c5ad72ee2e42
+  },
+  {
+    text: "useClipboard",
+    link: "/composition/useClipboard",
   },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
