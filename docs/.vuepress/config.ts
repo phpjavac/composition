@@ -8,7 +8,7 @@
  */
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
-
+const path = require('path')
 const children = [
   {
     text: "useRequest",
@@ -33,6 +33,10 @@ const children = [
   {
     text: "useHover",
     link: "/composition/useHover",
+  },
+  {
+    text: "useClipboard",
+    link: "/composition/useClipboard",
   },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
@@ -62,5 +66,6 @@ export default defineUserConfig<DefaultThemeOptions>({
         children: children,
       },
     ],
+
   },
 });
