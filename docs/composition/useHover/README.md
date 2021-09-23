@@ -25,7 +25,7 @@ import { ref, onMounted } from "vue";
     <div ref="divRef"
          style="width: 200px; height: 200px; background:pink"
     >
-    </div>isHovering:<span style="color: blue"> {{ isHovering }} </span>
+    </div>isHovering:<span style="color: red"> {{ isHovering }} </span>
 </div>
 </template>
 

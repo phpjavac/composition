@@ -1,11 +1,4 @@
-/*
- * @Author: your name
- * @Date: 2021-09-23 10:16:27
- * @LastEditTime: 2021-09-23 13:41:12
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \zcomposition\src\useHover\index.ts
- */
+
 import { BasicTarget, getTargetElement } from '../utils/dom';
 import { onUnmounted,ref } from 'vue';
 import { safeOnMounted } from '../utils';
