@@ -42,6 +42,10 @@ const children = [
     text: "usePermission",
     link: "/composition/usePermission",
   },
+  {
+    text: "useKeyPress",
+    link: "/composition/useKeyPress",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
