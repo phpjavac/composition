@@ -7,7 +7,7 @@ category: Animation
 Wrapper for `setTimeout` with controls.
 
 ```js
-import { useTimeoutFn } from '@vueuse/core'
+import { useTimeoutFn } from 'zcomposition'
 
 const { isPending, start, stop } = useTimeoutFn(() => {
   /* ... */
