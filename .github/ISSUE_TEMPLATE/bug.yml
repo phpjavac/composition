@@ -1,5 +1,5 @@
 name: bug
-description: bug-issues 模板
+description: bug-issues
 title: "[Bug]: "
 labels: ["bug", "triage"]
 assignees:

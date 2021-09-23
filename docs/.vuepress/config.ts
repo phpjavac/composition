@@ -38,6 +38,10 @@ const children = [
     text: "useClipboard",
     link: "/composition/useClipboard",
   },
+  {
+    text: "useKeyPress",
+    link: "/composition/useKeyPress",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
