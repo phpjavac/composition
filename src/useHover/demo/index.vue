@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-09-23 10:13:49
- * @LastEditTime: 2021-09-23 13:58:24
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: \zcomposition\src\useHover\demo\index.vue
--->
 <template>
   <div>
     <div
