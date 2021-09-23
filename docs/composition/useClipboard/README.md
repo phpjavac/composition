@@ -39,9 +39,9 @@ const permissionWrite = usePermission('clipboard-write')
 ## 代码演示
 
 ```js
-import { useClipboard } from '@vueuse/core'
-const source = ref('Hello')
-const { text, copy, copied, isSupported } = useClipboard({ source })
+import { useClipboard } from 'zcomposition'
+const target = ref()
+const { text, copy, copied, isSupported } = useClipboard({ target })
 ```
 
 ```html
@@ -57,3 +57,4 @@ const { text, copy, copied, isSupported } = useClipboard({ source })
 | -------    | ------------------- | ----------- | ------ |
 | target | 目标对象	         | (() => HTMLElement) | HTMLElement | React.RefObject	    | -       |
 | text   | 剪贴板中的文本          | string   | -       |
+| copy   | 复制时的事件          | (text)=>Promise<void>   | -       |
