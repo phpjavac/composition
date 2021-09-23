@@ -1,7 +1,15 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-23 10:13:49
+ * @LastEditTime: 2021-09-23 13:58:24
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \zcomposition\src\useHover\demo\index.vue
+-->
 <template>
   <div>
     <div
-      id="divRef"
+      ref="divRef"
       style="width: 200px; height: 200px; background: rgba(0, 0, 0, 0.2)"
     ></div>
 
@@ -14,9 +22,11 @@ import { useHover } from '../index';
 import {ref} from 'vue'
 export default {
   setup() {
-    const isHovering = useHover(() => document.getElementById('divRef'));
+    const divRef = ref()
+    const isHovering = useHover(() => divRef.value);
     return {
       isHovering,
+      divRef
     };
   },
 };
