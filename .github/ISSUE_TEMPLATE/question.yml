@@ -1,0 +1,26 @@
+name: question
+description: 问题讨论(discuss)
+title: "[question]: "
+labels: ["question", "triage"]
+assignees:
+  - octocat
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 问题描述
+      description: 有疑问的地方、需要讨论的地方
+      placeholder: 要讨论的内容
+      value: "？"
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: 版本号
+      description: 选择运行的版本号
+      options:
+        - 0.0.1 (Default)
+        - next (未来可能)
+    validations:
+      required: true
