@@ -39,6 +39,10 @@ const children = [
     link: "/composition/useClipboard",
   },
   {
+    text: "usePermission",
+    link: "/composition/usePermission",
+  },
+  {
     text: "useKeyPress",
     link: "/composition/useKeyPress",
   },
