@@ -34,6 +34,10 @@ const children = [
     text: "useHover",
     link: "/composition/useHover",
   },
+  {
+    text: "useObserver",
+    link: "/composition/useObserver",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
