@@ -1,4 +1,4 @@
-import { onMounted ,onUnmounted,ref } from 'vue'
+import { onMounted ,ref ,onBeforeUnmount} from 'vue'
 import { BasicTarget, getTargetElement } from '../utils/dom';
 
 
@@ -30,7 +30,7 @@ function isInViewPort(el: HTMLElement): boolean {
 
   export function useObserver(target: BasicTarget){
         const state = ref(false);
-      
+        let observer
         onMounted(() => {
           const targetElement = getTargetElement(target);
           if (!targetElement) {
@@ -39,17 +39,18 @@ function isInViewPort(el: HTMLElement): boolean {
           const defaultInViewport = isInViewPort(targetElement as HTMLElement);
           state.value = defaultInViewport;
       
-          const observer = new IntersectionObserver(entries => {
+          observer = new IntersectionObserver(entries => {
             const isIntersecting = entries.every(i => i.isIntersecting);
             state.value = isIntersecting;
           });
       
-          observer.observe(targetElement as HTMLElement);
-      
-          onUnmounted(() => {
+          observer.observe(targetElement as HTMLElement);  
+          onBeforeUnmount(() => {
             observer.disconnect();
-          });
-        });
+            });       
       
+        });
+        
+       
         return state;
       }  
