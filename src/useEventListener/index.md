@@ -9,7 +9,7 @@ Use EventListener with ease. Register using [addEventListener](https://developer
 ## Usage
 
 ```js
-import { useEventListener } from '@vueuse/core'
+import { useEventListener } from 'zcomposition'
 
 useEventListener(document, 'visibilitychange', (evt) => { console.log(evt) })
 ```
@@ -17,7 +17,7 @@ useEventListener(document, 'visibilitychange', (evt) => { console.log(evt) })
 You can also pass a ref as the event target, `useEventListener` will unregister the previous event and register the new one when you change the target.
 
 ```ts
-import { useEventListener } from '@vueuse/core'
+import { useEventListener } from 'zcomposition'
 
 const element = ref<HTMLDivElement>()
 useEventListener(element, 'keydown', (e) => { console.log(e.key) })

@@ -9,7 +9,7 @@ Safe `onScopeDispose`. Call `onScopeDispose()` if it's inside a effect scope lif
 ## Usage
 
 ```js
-import { tryOnScopeDispose } from '@vueuse/core'
+import { tryOnScopeDispose } from 'zcomposition'
 
 tryOnScopeDispose(() => {
 

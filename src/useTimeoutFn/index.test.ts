@@ -1,4 +1,4 @@
-import { promiseTimeout } from '@vueuse/core'
+import { promiseTimeout } from '../utils'
 import { ref } from 'vue'
 import { useTimeoutFn } from '.'
 
