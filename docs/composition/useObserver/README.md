@@ -31,6 +31,7 @@ const finalResult = useObserver(targetDom);
         width: 100px; 
         height: 100px;
         border: 1px solid #000; 
+        background: pink;
 }
 .finalResultW{
         position: absolute;
@@ -78,6 +79,7 @@ const finalResult = useObserver(targetDom);
         width: 100px; 
         height: 100px;
         border: 1px solid #000; 
+        background: pink;
 }
 .finalResultW{
         position: absolute;
