@@ -34,6 +34,10 @@ const children = [
     text: "useHover",
     link: "/composition/useHover",
   },
+  {
+    text: "useDebounceFn",
+    link: "/composition/useDebounceFn",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
