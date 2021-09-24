@@ -10,12 +10,12 @@ import { usePermission } from "./usePermission";
 import useKeyPress from "./useKeyPress";
 
 export { 
-    useRequest, 
-    Request, 
-    useSize, 
-    useDownloader, 
-    useClickAway, 
-    useFullscreen, 
+    useRequest,
+    Request,
+    useSize,
+    useDownloader,
+    useClickAway,
+    useFullscreen,
     useHover,
     useClipboard,
     usePermission,
