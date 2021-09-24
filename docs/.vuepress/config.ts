@@ -35,6 +35,10 @@ const children = [
     link: "/composition/useHover",
   },
   {
+    text: "useObserver",
+    link: "/composition/useObserver",
+  },
+  {
     text: "useClipboard",
     link: "/composition/useClipboard",
   },
