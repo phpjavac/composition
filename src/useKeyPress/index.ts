@@ -1,43 +1,53 @@
 /**
  * 键盘事件
  */
-
-import { onUnmounted } from "@vue/runtime-core";
-
-export type keyType = KeyboardEvent['key'] | KeyboardEvent['key'][];
-
+import useEffect from "../useEffect";
+// 键码
+export type KeyType = KeyboardEvent['key'] | KeyboardEvent['key'][];
 // 触发类型
 export type keyEvent = 'keydown' | 'keyup' | 'keypress';
-const defaultEvent = ['keydown'];
-// opt
+/**
+ * opt
+ * @param events 触发类型
+ */
 export interface EventOption {
-    events: Array<keyEvent>,
+    events?: Array<keyEvent>,
 }
+// 默认触发类型
+const defaultEvent: keyEvent[] = ['keydown'];
 
-// 占位空函数
-const nullFun = () => {}
+// 执行的函数类型
+type EventMethod = (event?: KeyboardEvent) => void;
 
-// code-别名
-const aliasKeyMap = {
-    ctrl: '',
-}
-
-const useEffect = (method: void, ) => {
-
-}
-
-const useKeyPress = (keyCode: keyType, method, option?: EventOption) => {
-    console.log(222)
-    // nullFun;
-    const {events: keyEvent = defaultEvent} = option;
-    keyEvent.forEach(kEve => {
-        window.addEventListener(kEve, method);
-    })
-    onUnmounted(() => {
-        console.log('ddddddddddddddd')
+/**
+ * 监听键盘事件
+ * @param keyCode 键码 / true —— true则都会触发
+ * @param method 要执行的函数
+ * @param option 配置项 
+ */
+const useKeyPress = (keyCode: KeyType | true, method:EventMethod, option: EventOption = {}) => {
+    const { events: keyEvent = defaultEvent } = option;
+    const codeMethod = (event: KeyboardEvent) => {
+        const getKeyBoolean = (e: KeyType | true): e is true => typeof e === 'boolean';
+        if (getKeyBoolean(keyCode)) {
+            if (keyCode) method(event);
+        } else {
+            const keys = typeof keyCode === 'string' ? [keyCode] : [...keyCode]
+            if (keys.includes(event.code)) {
+                method(event);
+            };
+        }
+    }
+    
+    useEffect(() => {
         keyEvent.forEach(kEve => {
-            window.removeEventListener(kEve, method);
-        })
+            window.addEventListener(kEve, codeMethod);
+        });
+        return () => {
+            keyEvent.forEach(kEve => {
+                window.removeEventListener(kEve, codeMethod);
+            })
+        }
     })
 }
 
