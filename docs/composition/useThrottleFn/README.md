@@ -1,13 +1,13 @@
-# useDebounceFn
+# useThrottleFn
 
-防抖
+节流
 
 ### 代码演示
 
 ## 基础使用
 
 <script setup lang='ts'>
-import { useDebounceFn } from "zcomposition";
+import { useThrottleFn } from "zcomposition";
 import { ref, onMounted, reactive, watch } from "vue";
 
 const count = ref(0)
@@ -15,7 +15,7 @@ const fn = () => {
     count.value++;
 }
 
-const {run, cancel, flush} = useDebounceFn(fn, {wait: 1000,})
+const {run, cancel, flush} = useThrottleFn(fn, {wait: 1000,leading: false,trailing: true})
 
 </script>
 
@@ -32,7 +32,7 @@ const {run, cancel, flush} = useDebounceFn(fn, {wait: 1000,})
 
 ```vue
 <script setup lang='ts'>
-import { useDebounceFn } from "zcomposition";
+import { useThrottleFn } from "zcomposition";
 import { ref, onMounted, reactive, watch } from "vue";
 
 const count = ref(0)
@@ -40,7 +40,7 @@ const fn = () => {
     count.value++;
 }
 
-const {run, cancel, flush} = useDebounceFn(fn, {wait: 1000})
+const {run, cancel, flush} = useThrottleFn(fn, {wait: 1000,leading: false,trailing: true})
 
 </script>
 
@@ -66,7 +66,7 @@ const {run, cancel, flush} = useDebounceFn(fn, {wait: 1000})
 | 参数      | 说明                      | 类型                   | 默认值 |
 | -------   | ------------------------- | ---------------------- | ------ |
 | wait    | 超时时间，单位为毫秒            | `number` | 1000     |
-| leading    | 是否在上升沿触发副作用函数         | `boolean` | `false`     |
+| leading    | 是否在上升沿触发副作用函数         | `boolean` | `true`     |
 | trailing    | 是否在下降沿触发副作用函数        | `boolean` | `true`    |
 
 ## Result

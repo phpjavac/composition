@@ -38,6 +38,10 @@ const children = [
     text: "useDebounceFn",
     link: "/composition/useDebounceFn",
   },
+  {
+    text: "useThrottleFn",
+    link: "/composition/useThrottleFn",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
