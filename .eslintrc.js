@@ -9,7 +9,20 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['airbnb-base', 'plugin:vue/essential'],
+  extends: ['airbnb-base', 'prettier', 'plugin:vue/essential'],
+  rules: {
+    'import/extensions': 'off',
+    'prettier/prettier': 'error',
+    'no-unused-vars': 'warn',
+    indent: ['error', 2],
+  },
   // required to lint *.vue files
-  plugins: ['vue'],
-};
+  plugins: ['vue', 'prettier'],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+      },
+    },
+  },
+}
