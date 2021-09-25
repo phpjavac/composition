@@ -7,5 +7,18 @@ import {useHover} from "./useHover";
 import { useObserver } from "./useObserver";
 import { useClipboard } from "./useClipboard";
 import { usePermission } from "./usePermission";
+import useKeyPress from "./useKeyPress";
 
-export { useRequest, Request, useSize, useDownloader, useClickAway, useFullscreen, useHover,useClipboard,usePermission,useObserver };
+export { 
+    useRequest,
+    Request,
+    useSize,
+    useDownloader,
+    useClickAway,
+    useFullscreen,
+    useHover,
+    useClipboard,
+    usePermission,
+    useObserver,
+    useKeyPress,
+};
