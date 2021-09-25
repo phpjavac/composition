@@ -119,7 +119,7 @@ const finalResult = useInViewport(targetDom, changeFunc)
 | 参数   | 说明     | 类型                       | 默认值 |
 | ------ | -------- | -------------------------- | ------ |
 | target | 目标对象 | `Ref<HTMLElement \| null>` | -      |
-| callback     | 目标函数进入或离开视图的回调函数             | `function(value)` |             |
+| callback     | 目标函数进入或离开视图的回调函数             | `function(value)` |-            |
 
 ## 结果
 
