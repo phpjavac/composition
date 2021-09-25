@@ -1,6 +1,6 @@
-# useRequest
+# useInViewport
 
-监听 DOM 元素是否出现在浏览器视窗中
+监听 DOM 元素是否出现在视图中
 
 ## 代码演示
 
@@ -14,10 +14,18 @@
 
 <script setup lang='ts'>
 import {ref,watch,onMounted } from 'vue';
-import { useObserver } from 'zcomposition';
+import { useInViewport } from 'zcomposition';
 
 const targetDom = ref(null);
-const finalResult = useObserver(targetDom);
+const changeFunc = (value) => {
+    if (value) {
+        console.log("进入");
+    }
+    else {
+        console.log('离开');
+    }
+}
+const finalResult = useInViewport(targetDom, changeFunc)
 
 </script>
 
@@ -62,10 +70,18 @@ const finalResult = useObserver(targetDom);
 
 <script setup lang='ts'>
 import {ref,watch,onMounted } from 'vue';
-import { useObserver } from 'zcomposition';
+import { useInViewport } from 'zcomposition';
 
 const targetDom = ref(null);
-const finalResult = useObserver(targetDom);
+const changeFunc = (value) => {
+    if (value) {
+        console.log("进入");
+    }
+    else {
+        console.log('离开');
+    }
+}
+const finalResult = useInViewport(targetDom, changeFunc)
 
 </script>
 
@@ -103,6 +119,7 @@ const finalResult = useObserver(targetDom);
 | 参数   | 说明     | 类型                       | 默认值 |
 | ------ | -------- | -------------------------- | ------ |
 | target | 目标对象 | `Ref<HTMLElement \| null>` | -      |
+| callback     | 目标函数进入或离开视图的回调函数             | `function(value)` |             |
 
 ## 结果
 
