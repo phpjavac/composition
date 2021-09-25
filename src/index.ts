@@ -8,6 +8,11 @@ import { useObserver } from "./useObserver";
 import { useClipboard } from "./useClipboard";
 import { usePermission } from "./usePermission";
 import useKeyPress from "./useKeyPress";
+import useDebounceFn from "./useDebounceFn"
+import useThrottleFn from "./useThrottleFn"
+
+
+
 
 export { 
     useRequest,
@@ -21,4 +26,6 @@ export {
     usePermission,
     useObserver,
     useKeyPress,
+    useThrottleFn,
+    useDebounceFn
 };

@@ -35,6 +35,14 @@ const children = [
     link: "/composition/useHover",
   },
   {
+    text: "useDebounceFn",
+    link: "/composition/useDebounceFn",
+  },
+  {
+    text: "useThrottleFn",
+    link: "/composition/useThrottleFn",
+  },
+  {
     text: "useObserver",
     link: "/composition/useObserver",
   },
