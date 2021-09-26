@@ -58,6 +58,10 @@ const children = [
     text: "useKeyPress",
     link: "/composition/useKeyPress",
   },
+  {
+    text: "useEffect",
+    link: "/composition/useEffect",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
