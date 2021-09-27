@@ -43,8 +43,8 @@ const children = [
     link: "/composition/useThrottleFn",
   },
   {
-    text: "useObserver",
-    link: "/composition/useObserver",
+    text: "useInViewport",
+    link: "/composition/useInViewport",
   },
   {
     text: "useClipboard",
@@ -57,6 +57,10 @@ const children = [
   {
     text: "useKeyPress",
     link: "/composition/useKeyPress",
+  },
+  {
+    text: "useEffect",
+    link: "/composition/useEffect",
   },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
