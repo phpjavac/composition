@@ -2,7 +2,7 @@
   "name": "zcomposition",
   "version": "0.5.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
