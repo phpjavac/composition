@@ -1,13 +1,22 @@
 {
+<<<<<<< HEAD
   "name": "zdhcomposition",
   "version": "0.4.0",
+=======
+  "name": "zcomposition",
+  "version": "0.5.0",
+>>>>>>> 652cfcbbc9e7626d96f211ab5e4c95e111f0d148
   "description": "",
   "main": "src/index.ts",
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+<<<<<<< HEAD
     "build": "babel src/ -d bundle/",
     "build1": "webpack"
+=======
+    "prepare": "husky install && node ./scripts/commitMsgHook.js"
+>>>>>>> 652cfcbbc9e7626d96f211ab5e4c95e111f0d148
   },
   "author": "",
   "license": "ISC",
@@ -31,8 +40,12 @@
     "zcomposition": "0.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@types/file-saver": "^2.0.3",
     "@types/lodash": "^4.14.173",
+    "devmoji": "^2.3.0",
+    "husky": "^7.0.2",
     "vuepress": "^2.0.0-beta.26"
   }
 }

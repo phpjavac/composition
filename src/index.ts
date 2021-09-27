@@ -7,10 +7,22 @@ import {useHover} from "./useHover";
 import { useObserver } from "./useObserver";
 import { useClipboard } from "./useClipboard";
 import { usePermission } from "./usePermission";
-import useDebounceFn from "./useDebounceFn";
-import useThrottleFn from "./useThrottleFn";
 import useKeyPress from "./useKeyPress";
+import useDebounceFn from "./useDebounceFn"
+import useThrottleFn from "./useThrottleFn"
 
-export { useRequest, Request, useSize, useDownloader, useClickAway, useFullscreen, useHover,useClipboard,usePermission,useObserver,useDebounceFn,useThrottleFn, useKeyPress };
-
-
+export { 
+    useRequest,
+    Request,
+    useSize,
+    useDownloader,
+    useClickAway,
+    useFullscreen,
+    useHover,
+    useClipboard,
+    usePermission,
+    useObserver,
+    useKeyPress,
+    useThrottleFn,
+    useDebounceFn
+};
