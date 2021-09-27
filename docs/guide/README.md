@@ -23,6 +23,8 @@ import { useRequest } from 'zcomposition';
 
 ## 按需导入
 
+#### 在babel环境中
+
 1. 下载`babel-plugin-import`
 ```
 npm install babel-plugin-import
@@ -33,7 +35,7 @@ npm install babel-plugin-import
 {
     "plugins": [
         ["import", {
-            "libraryName": "zdhcomposition",
+            "libraryName": "zcomposition",
             "libraryDirectory": "lib",
             "camel2DashComponentName": false
         }
@@ -41,3 +43,7 @@ npm install babel-plugin-import
     ]
 }
 ```
+
+#### 在vite中
+
+由于vite是默认按需引用的的，所以不需要特殊配置
