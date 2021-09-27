@@ -20,3 +20,24 @@ yarn add zcomposition
 ```
 import { useRequest } from 'zcomposition';
 ```
+
+## 按需导入
+
+1. 下载`babel-plugin-import`
+```
+npm install babel-plugin-import
+```
+2.在根目录新建`.babelrc`文件
+``` js
+// .babelrc
+{
+    "plugins": [
+        ["import", {
+            "libraryName": "zdhcomposition",
+            "libraryDirectory": "lib",
+            "camel2DashComponentName": false
+        }
+        ]
+    ]
+}
+```
