@@ -10,7 +10,6 @@ export interface ConfigurableEventFilter {
     /**
      * Filter for if events should to be received.
      *
-     * @see https://vueuse.org/guide/config.html#event-filters
      */
     eventFilter?: EventFilter;
 }

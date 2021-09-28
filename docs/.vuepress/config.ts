@@ -62,6 +62,10 @@ const children = [
     text: "useEffect",
     link: "/composition/useEffect",
   },
+  {
+    text: "useTitle",
+    link: "/composition/useTitle",
+  },
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
