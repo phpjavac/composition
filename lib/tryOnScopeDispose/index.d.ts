@@ -4,4 +4,4 @@ import { Fn } from '../utils';
  *
  * @param fn
  */
-export declare function tryOnScopeDispose(fn: Fn): boolean;
+export default function tryOnScopeDispose(fn: Fn): boolean;

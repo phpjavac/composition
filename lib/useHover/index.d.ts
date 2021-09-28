@@ -3,5 +3,5 @@ interface Options {
     onEnter?: () => void;
     onLeave?: () => void;
 }
-export declare function useHover(target: BasicTarget, options?: Options): any;
+export default function useHover(target: BasicTarget, options?: Options): import("vue").Ref<boolean>;
 export {};

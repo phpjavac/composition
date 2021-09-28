@@ -4,4 +4,4 @@ import { Fn } from '../utils';
  *
  * @param fn
  */
-export declare function tryOnBeforeUnmount(fn: Fn): void;
+export default function tryOnBeforeUnmount(fn: Fn): void;

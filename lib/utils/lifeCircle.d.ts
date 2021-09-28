@@ -3,3 +3,4 @@
  * @param hook 需要执行的钩子
  */
 export declare function safeOnMounted(hook?: () => void): void;
+export declare const t = "";

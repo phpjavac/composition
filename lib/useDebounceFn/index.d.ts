@@ -4,7 +4,7 @@ interface DebounceOptions {
     leading: boolean;
     traling: boolean;
 }
-declare function useDebounceFn<T extends Fn>(Fn: T, options?: DebounceOptions): {
+declare function useDebounceFn<T extends Fn>(Fnn: T, options?: DebounceOptions): {
     run: () => void;
     cancel: () => void;
     flush: () => void;
