@@ -1,4 +1,4 @@
-import { Ref } from "vue";
+import { Ref } from 'vue';
 export interface UseClickAwayOption {
     onClickAway: (event: MouseEvent | TouchEvent) => void;
     target: Ref<HTMLElement | HTMLElement[]>;

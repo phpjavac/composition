@@ -25,6 +25,7 @@ const $$types = [
 // 使用 function rules 时，要先禁用同名的rules，否则会重复校验
 module.exports = {
   extends: ['@commitlint/config-conventional'],
+  exclude: ['lib'],
   plugins: ['commitlint-plugin-function-rules'],
   rules: {
     'type-enum': [2, 'always', $$types],

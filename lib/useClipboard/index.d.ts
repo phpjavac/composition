@@ -1,5 +1,5 @@
-import { MaybeRef } from '../utils';
 import { ComputedRef } from 'vue';
+import { MaybeRef } from '../utils/index';
 import { ConfigurableNavigator } from '../_configurable';
 export interface ClipboardOptions<Source> extends ConfigurableNavigator {
     /**

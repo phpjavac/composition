@@ -20,26 +20,29 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { useKeyPress } from "../../../../../../src";
+import { useKeyPress } from "@lib";
+import { isClient } from '@lib/../src/utils';
 
 const whiteKeys = ['KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT'];
 const keys = reactive({
     whiteKey: '',
     allKey: '',
 })
-useKeyPress(
-    whiteKeys, 
-    (event: KeyboardEvent)=>{
-        keys.whiteKey = event.key;
-    }
-);
-useKeyPress(
-    true,
-    (event: KeyboardEvent) => {
-        console.log('无白名单', event);
-        keys.allKey = event.key;
-    }
-)
+if (isClient) {
+    useKeyPress(
+        whiteKeys, 
+        (event: KeyboardEvent)=>{
+            keys.whiteKey = event.key;
+        }
+    );
+    useKeyPress(
+        true,
+        (event: KeyboardEvent) => {
+            console.log('无白名单', event);
+            keys.allKey = event.key;
+        }
+    )
+}
 </script>
 
 ## 示例代码

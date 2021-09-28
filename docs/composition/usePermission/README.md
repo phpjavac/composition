@@ -11,7 +11,7 @@ category: Browser
 <script setup lang="ts">
 import { computed, reactive } from 'vue'
 import YAML from 'js-yaml'
-import { usePermission } from 'zcomposition'
+import { usePermission } from '@lib'
 
 const geolocation = usePermission('geolocation')
 const microphone = usePermission('microphone')

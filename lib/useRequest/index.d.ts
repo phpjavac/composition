@@ -1,6 +1,6 @@
-import { AxiosRequestConfig, AxiosResponse, AxiosStatic } from "axios";
-import { Ref, UnwrapRef } from "vue";
-declare type Method = "get" | "post" | "put" | "delete";
+import { AxiosRequestConfig, AxiosResponse, AxiosStatic } from 'axios';
+import { Ref, UnwrapRef } from 'vue';
+declare type Method = 'get' | 'post' | 'put' | 'delete';
 interface ConfigureOptions {
     url: string;
     method: Method;

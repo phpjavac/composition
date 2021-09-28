@@ -39,3 +39,8 @@ export interface Stopable {
      */
     start: Fn;
 }
+declare type PermissionName = "gamepad" | "geolocation" | "notifications" | "persistent-storage" | "push" | "screen-wake-lock";
+export interface PermissionDescriptor {
+    name: PermissionName;
+}
+export {};
