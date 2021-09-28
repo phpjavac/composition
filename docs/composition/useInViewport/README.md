@@ -14,7 +14,7 @@
 
 <script setup lang='ts'>
 import {ref,watch,onMounted } from 'vue';
-import { useInViewport } from 'zcomposition';
+import { useInViewport } from '../../../../../../src';
 
 const targetDom = ref(null);
 const changeFunc = (value) => {
