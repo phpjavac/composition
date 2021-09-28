@@ -1,6 +1,6 @@
 import { Ref, ref, onUnmounted } from "vue";
 import { safeOnMounted } from "../utils";
-import { debounce } from "lodash";
+import debounce from "lodash/debounce";
 import { getTargetElement } from "../utils/dom";
 
 

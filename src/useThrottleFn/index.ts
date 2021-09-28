@@ -1,5 +1,5 @@
 import { ref, Ref, onUnmounted } from "vue";
-import { throttle } from "lodash";
+import throttle from "lodash/throttle";
 
 type Fn = (...args: any) => any
 
