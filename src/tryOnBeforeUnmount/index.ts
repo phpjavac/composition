@@ -6,7 +6,6 @@ import { Fn } from '../utils'
  *
  * @param fn
  */
-export function tryOnBeforeUnmount(fn: Fn) {
-  if (getCurrentInstance())
-    onBeforeUnmount(fn)
+export default function tryOnBeforeUnmount(fn: Fn) {
+  if (getCurrentInstance()) onBeforeUnmount(fn)
 }

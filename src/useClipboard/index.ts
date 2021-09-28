@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
 /* this implementation is original ported from https://github.com/logaretm/vue-use-web by Abdelrahman Awad */
 
-import { MaybeRef } from '../utils'
-import { useTimeoutFn } from '../useTimeoutFn'
 import { ComputedRef, ref, unref } from 'vue'
+import { MaybeRef } from '../utils/index'
+import { useTimeoutFn } from '../useTimeoutFn'
 import { useEventListener, WindowEventName } from '../useEventListener'
 import { ConfigurableNavigator, defaultNavigator } from '../_configurable'
 
@@ -31,7 +33,9 @@ export interface ClipboardReturn<Optional> {
   isSupported: boolean
   text: ComputedRef<string>
   copied: ComputedRef<boolean>
-  copy: Optional extends true ? (text?: string) => Promise<void> : (text: string) => Promise<void>
+  copy: Optional extends true
+    ? (text?: string) => Promise<void>
+    : (text: string) => Promise<void>
 }
 
 /**
@@ -40,9 +44,15 @@ export interface ClipboardReturn<Optional> {
  * @see https://vueuse.org/useClipboard
  * @param options
  */
-export function useClipboard(options?: ClipboardOptions<undefined>): ClipboardReturn<false>
-export function useClipboard(options: ClipboardOptions<MaybeRef<string>>): ClipboardReturn<true>
-export function useClipboard(options: ClipboardOptions<MaybeRef<string> | undefined> = {}): ClipboardReturn<boolean> {
+export function useClipboard(
+  options?: ClipboardOptions<undefined>
+): ClipboardReturn<false>
+export function useClipboard(
+  options: ClipboardOptions<MaybeRef<string>>
+): ClipboardReturn<true>
+export function useClipboard(
+  options: ClipboardOptions<MaybeRef<string> | undefined> = {}
+): ClipboardReturn<boolean> {
   const {
     navigator = defaultNavigator,
     read = true,
@@ -55,7 +65,7 @@ export function useClipboard(options: ClipboardOptions<MaybeRef<string> | undefi
   const text = ref('')
   const copied = ref(false)
 
-  const timeout = useTimeoutFn(() => copied.value = false, copiedDuring)
+  const timeout = useTimeoutFn(() => {copied.value = false}, copiedDuring)
 
   function updateText() {
     navigator.clipboard.readText().then((value) => {
@@ -64,6 +74,7 @@ export function useClipboard(options: ClipboardOptions<MaybeRef<string> | undefi
   }
 
   if (isSupported && read) {
+    // eslint-disable-next-line no-restricted-syntax
     for (const event of events)
       useEventListener(event as WindowEventName, updateText)
   }

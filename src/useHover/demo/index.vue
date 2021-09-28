@@ -10,16 +10,17 @@
 </template>
 
 <script lang="ts">
-import { useHover } from '../index';
-import {ref} from 'vue'
+import { ref } from 'vue'
+import useHover from '../index'
+
 export default {
   setup() {
     const divRef = ref()
-    const isHovering = useHover(() => divRef.value);
+    const isHovering = useHover(() => divRef.value)
     return {
       isHovering,
-      divRef
-    };
+      divRef,
+    }
   },
-};
+}
 </script>

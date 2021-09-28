@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-underscore-dangle */
 export * from './lifeCircle'
 export * from './is'
 export * from './filters'
@@ -6,13 +9,11 @@ export * from './types'
 export function promiseTimeout(
   ms: number,
   throwOnTimeout = false,
-  reason = 'Timeout',
+  reason = 'Timeout'
 ): Promise<void> {
   return new Promise((resolve, reject) => {
-    if (throwOnTimeout)
-      setTimeout(() => reject(reason), ms)
-    else
-      setTimeout(resolve, ms)
+    if (throwOnTimeout) setTimeout(() => reject(reason), ms)
+    else setTimeout(resolve, ms)
   })
 }
 
@@ -41,19 +42,19 @@ export interface SingletonPromiseReturn<T> {
  * await promise() // and be resolved together
  * ```
  */
-export function createSingletonPromise<T>(fn: () => Promise<T>): SingletonPromiseReturn<T> {
+export function createSingletonPromise<T>(
+  fn: () => Promise<T>
+): SingletonPromiseReturn<T> {
   let _promise: Promise<T> | undefined
 
   function wrapper() {
-    if (!_promise)
-      _promise = fn()
+    if (!_promise) _promise = fn()
     return _promise
   }
-  wrapper.reset = async() => {
+  wrapper.reset = async () => {
     const _prev = _promise
     _promise = undefined
-    if (_prev)
-      await _prev
+    if (_prev) await _prev
   }
 
   return wrapper
@@ -64,7 +65,7 @@ export function invoke<T>(fn: () => T): T {
 }
 
 export function containsProp(obj: object, ...props: string[]) {
-  return props.some(k => k in obj)
+  return props.some((k) => k in obj)
 }
 
 /**
@@ -75,15 +76,19 @@ export function containsProp(obj: object, ...props: string[]) {
  */
 export function increaseWithUnit(target: number, delta: number): number
 export function increaseWithUnit(target: string, delta: number): string
-export function increaseWithUnit(target: string | number, delta: number): string | number
-export function increaseWithUnit(target: string | number, delta: number): string | number {
-  if (typeof target === 'number')
-    return target + delta
+export function increaseWithUnit(
+  target: string | number,
+  delta: number
+): string | number
+export function increaseWithUnit(
+  target: string | number,
+  delta: number
+): string | number {
+  if (typeof target === 'number') return target + delta
   const value = target.match(/^-?[0-9]+\.?[0-9]*/)?.[0] || ''
   const unit = target.slice(value.length)
-  const result = (parseFloat(value) + delta)
-  if (Number.isNaN(result))
-    return target
+  const result = parseFloat(value) + delta
+  if (Number.isNaN(result)) return target
   return result + unit
 }
 
@@ -92,10 +97,14 @@ export function increaseWithUnit(target: string | number, delta: number): string
  *
  * @category Object
  */
-export function objectPick<O, T extends keyof O>(obj: O, keys: T[], omitUndefined = false) {
+export function objectPick<O, T extends keyof O>(
+  obj: O,
+  keys: T[],
+  omitUndefined = false
+) {
   return keys.reduce((n, k) => {
-    if (k in obj)
-      if (!omitUndefined || !obj[k] === undefined) n[k] = obj[k]
+    // eslint-disable-next-line no-param-reassign
+    if (k in obj) if (!omitUndefined || !obj[k] === undefined) n[k] = obj[k]
     return n
   }, {} as Pick<O, T>)
 }
