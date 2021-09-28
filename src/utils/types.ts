@@ -32,22 +32,22 @@ export interface Pausable {
 }
 
 export interface Stopable {
-    /**
-     * A ref indicate whether a stopable instance is executing
-     */
-    isPending: Ref<boolean>
-  
-    /**
-     * Stop the effect from executing
-     */
-    stop: Fn
-  
-    /**
-     * Start the effects
-     */
-    start: Fn
-  }
-  type PermissionName = "gamepad" | "geolocation" | "notifications" | "persistent-storage" | "push" | "screen-wake-lock";
-  export interface PermissionDescriptor {
+  /**
+   * A ref indicate whether a stopable instance is executing
+   */
+  isPending: Ref<boolean>
+
+  /**
+   * Stop the effect from executing
+   */
+  stop: Fn
+
+  /**
+   * Start the effects
+   */
+  start: Fn
+}
+type PermissionName = "gamepad" | "geolocation" | "notifications" | "persistent-storage" | "push" | "screen-wake-lock";
+export interface PermissionDescriptor {
     name: PermissionName;
-  }
+}

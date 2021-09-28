@@ -1,15 +1,24 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
 import { Ref, ref } from 'vue'
-import { createSingletonPromise } from '../utils'
+import { createSingletonPromise, PermissionDescriptor } from '../utils'
 import { useEventListener } from '../useEventListener'
 import { ConfigurableNavigator, defaultNavigator } from '../_configurable'
 
-type DescriptorNamePolyfill = 'clipboard-read' | 'clipboard-write' | 'camera' | 'microphone' | 'speaker'
+type DescriptorNamePolyfill =
+  | 'clipboard-read'
+  | 'clipboard-write'
+  | 'camera'
+  | 'microphone'
+  | 'speaker'
 
 export type GeneralPermissionDescriptor =
   | PermissionDescriptor
   | { name: DescriptorNamePolyfill }
 
-export interface UsePermissionOptions<Controls extends boolean> extends ConfigurableNavigator {
+export interface UsePermissionOptions<Controls extends boolean>
+  extends ConfigurableNavigator {
   /**
    * Expose more controls
    *
@@ -31,48 +40,50 @@ export interface UsePermissionReturnWithControls {
  * @see https://vueuse.org/usePermission
  */
 export function usePermission(
-  permissionDesc: GeneralPermissionDescriptor | GeneralPermissionDescriptor['name'],
+  permissionDesc:
+    | GeneralPermissionDescriptor
+    | GeneralPermissionDescriptor['name'],
   options?: UsePermissionOptions<false>
 ): UsePermissionReturn
 export function usePermission(
-  permissionDesc: GeneralPermissionDescriptor | GeneralPermissionDescriptor['name'],
-  options: UsePermissionOptions<true>,
+  permissionDesc:
+    | GeneralPermissionDescriptor
+    | GeneralPermissionDescriptor['name'],
+  options: UsePermissionOptions<true>
 ): UsePermissionReturnWithControls
 export function usePermission(
-  permissionDesc: GeneralPermissionDescriptor | GeneralPermissionDescriptor['name'],
-  options: UsePermissionOptions<boolean> = {},
+  permissionDesc:
+    | GeneralPermissionDescriptor
+    | GeneralPermissionDescriptor['name'],
+  options: UsePermissionOptions<boolean> = {}
 ): UsePermissionReturn | UsePermissionReturnWithControls {
-  const {
-    controls = false,
-    navigator = defaultNavigator,
-  } = options
+  const { controls = false, navigator = defaultNavigator } = options
 
   const isSupported = Boolean(navigator && 'permissions' in navigator)
   let permissionStatus: PermissionStatus | undefined
 
-  const desc = typeof permissionDesc === 'string'
-    ? { name: permissionDesc } as PermissionDescriptor
-    : permissionDesc as PermissionDescriptor
+  const desc =
+    typeof permissionDesc === 'string'
+      ? ({ name: permissionDesc } as PermissionDescriptor)
+      : (permissionDesc as PermissionDescriptor)
   const state = ref<PermissionState | undefined>()
 
   const onChange = () => {
-    if (permissionStatus)
-      state.value = permissionStatus.state
+    if (permissionStatus) state.value = permissionStatus.state
   }
 
-  const query = createSingletonPromise(async() => {
-    if (!isSupported)
-      return
+  const query = createSingletonPromise(async () => {
+    if (!isSupported) return
     if (!permissionStatus) {
       try {
         permissionStatus = await navigator!.permissions.query(desc)
         useEventListener(permissionStatus, 'change', onChange)
         onChange()
-      }
-      catch {
+      } catch {
         state.value = 'prompt'
       }
     }
+    // eslint-disable-next-line consistent-return
     return permissionStatus
   })
 
@@ -85,7 +96,6 @@ export function usePermission(
       query,
     }
   }
-  else {
-    return state as UsePermissionReturn
-  }
+
+  return state as UsePermissionReturn
 }

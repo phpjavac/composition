@@ -1,23 +1,23 @@
-import axios, { AxiosRequestConfig, AxiosResponse, AxiosStatic } from "axios";
-import { Ref, ref, UnwrapRef } from "vue";
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosStatic } from 'axios'
+import { Ref, ref, UnwrapRef } from 'vue'
 
-type Method = "get" | "post" | "put" | "delete";
+type Method = 'get' | 'post' | 'put' | 'delete'
 
 interface ConfigureOptions {
-  url: string;
-  method: Method;
-  body?: any;
-  headers?: any;
+  url: string
+  method: Method
+  body?: any
+  headers?: any
 }
 
 class Request {
-  private static instance: AxiosStatic;
+  private static instance: AxiosStatic
 
   public static getInstance(): AxiosStatic {
     if (!Request.instance) {
-      Request.instance = axios;
+      Request.instance = axios
     }
-    return Request.instance;
+    return Request.instance
   }
 
   /**
@@ -25,10 +25,10 @@ class Request {
    * @param config -> AxiosRequestConfig
    */
   public static setOption(config: AxiosRequestConfig) {
-    const k = Object.keys(config);
+    const k = Object.keys(config)
     k.forEach((element) => {
-      Request.getInstance().defaults[element] = config[element];
-    });
+      Request.getInstance().defaults[element] = config[element]
+    })
   }
 
   /**
@@ -42,7 +42,7 @@ class Request {
     // eslint-disable-next-line no-unused-vars
     errorFunc?: (error: any) => any
   ) {
-    Request.getInstance().interceptors.request.use(func, errorFunc);
+    Request.getInstance().interceptors.request.use(func, errorFunc)
   }
 
   /**
@@ -56,14 +56,14 @@ class Request {
     // eslint-disable-next-line no-unused-vars
     errorFunc?: (error: any) => any
   ) {
-    Request.getInstance().interceptors.response.use(func, errorFunc);
+    Request.getInstance().interceptors.response.use(func, errorFunc)
   }
 }
 
 interface UseRequest<T> {
-  error: Ref<string>;
-  loading: Ref<boolean>;
-  response: Ref<UnwrapRef<T>>;
+  error: Ref<string>
+  loading: Ref<boolean>
+  response: Ref<UnwrapRef<T>>
 }
 
 const useRequest = <T>({
@@ -72,21 +72,21 @@ const useRequest = <T>({
   body,
   headers,
 }: ConfigureOptions): UseRequest<T> => {
-  const response = ref<T>(null);
-  const error = ref("");
-  const loading = ref(true);
+  const response = ref<T>(null)
+  const error = ref('')
+  const loading = ref(true)
   Request.getInstance()
     [method](url, body, { headers })
     .then((result) => {
-      response.value = result.data;
+      response.value = result.data
     })
     .catch((err) => {
-      error.value = err;
+      error.value = err
     })
     .finally(() => {
-      loading.value = false;
-    });
-  return { error, loading, response };
-};
+      loading.value = false
+    })
+  return { error, loading, response }
+}
 
-export { useRequest, Request };
+export { useRequest, Request }

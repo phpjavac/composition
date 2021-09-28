@@ -1,9 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { ref, unref } from 'vue'
 import { Fn, Pausable, MaybeRef } from './types'
 
-export type FunctionArgs<Args extends any[] = any[], Return = void> = (...args: Args) => Return
+export type FunctionArgs<Args extends any[] = any[], Return = void> = (
+  // eslint-disable-next-line no-unused-vars
+  ...args: Args
+) => Return
 
-export interface FunctionWrapperOptions<Args extends any[] = any[], This = any> {
+export interface FunctionWrapperOptions<
+  Args extends any[] = any[],
+  This = any
+> {
   fn: FunctionArgs<Args, This>
   args: Args
   thisArg: This
@@ -26,7 +33,10 @@ export interface ConfigurableEventFilter {
 /**
  * @internal
  */
-export function createFilterWrapper<T extends FunctionArgs>(filter: EventFilter, fn: T) {
+export function createFilterWrapper<T extends FunctionArgs>(
+  filter: EventFilter,
+  fn: T
+) {
   function wrapper(this: any, ...args: any[]) {
     filter(() => fn.apply(this, args), { fn, thisArg: this, args })
   }
@@ -34,9 +44,7 @@ export function createFilterWrapper<T extends FunctionArgs>(filter: EventFilter,
   return wrapper as any as T
 }
 
-export const bypassFilter: EventFilter = (invoke) => {
-  return invoke()
-}
+export const bypassFilter: EventFilter = (invoke) => invoke()
 
 /**
  * Create an EventFilter that debounce the events
@@ -49,11 +57,12 @@ export function debounceFilter(ms: MaybeRef<number>) {
   const filter: EventFilter = (invoke) => {
     const duration = unref(ms)
 
-    if (timer)
-      clearTimeout(timer)
+    if (timer) clearTimeout(timer)
 
-    if (duration <= 0)
-      return invoke()
+    if (duration <= 0) {
+      invoke();
+      return;
+    }
 
     timer = setTimeout(invoke, duration)
   }
@@ -86,14 +95,14 @@ export function throttleFilter(ms: MaybeRef<number>, trailing = true) {
 
     if (duration <= 0) {
       lastExec = Date.now()
-      return invoke()
+      invoke()
+      return
     }
 
     if (elapsed > duration) {
       lastExec = Date.now()
       invoke()
-    }
-    else if (trailing) {
+    } else if (trailing) {
       timer = setTimeout(() => {
         lastExec = Date.now()
         clear()
@@ -111,7 +120,9 @@ export function throttleFilter(ms: MaybeRef<number>, trailing = true) {
  * @param extendFilter  Extra filter to apply when the PauseableFilter is active, default to none
  *
  */
-export function pausableFilter(extendFilter: EventFilter = bypassFilter): Pausable & { eventFilter: EventFilter } {
+export function pausableFilter(
+  extendFilter: EventFilter = bypassFilter
+): Pausable & { eventFilter: EventFilter } {
   const isActive = ref(true)
 
   function pause() {
@@ -122,8 +133,7 @@ export function pausableFilter(extendFilter: EventFilter = bypassFilter): Pausab
   }
 
   const eventFilter: EventFilter = (...args) => {
-    if (isActive.value)
-      extendFilter(...args)
+    if (isActive.value) extendFilter(...args)
   }
 
   return { isActive, pause, resume, eventFilter }

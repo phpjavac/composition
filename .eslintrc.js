@@ -12,8 +12,10 @@ module.exports = {
   extends: ['airbnb-base', 'prettier', 'plugin:vue/essential'],
   rules: {
     'import/extensions': 'off',
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'off',
     'no-unused-vars': 'warn',
+    'no-unused-expressions': 'off', // 禁止未使用过的表达式 可以使用短路写法
+    'no-console': 'off',
     indent: ['error', 2],
   },
   // required to lint *.vue files

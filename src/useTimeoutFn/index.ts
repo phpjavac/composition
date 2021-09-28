@@ -1,5 +1,5 @@
 import { ref, unref } from 'vue'
-import { tryOnScopeDispose } from '../tryOnScopeDispose'
+import tryOnScopeDispose from '../tryOnScopeDispose'
 import { isClient, MaybeRef, Stopable } from '../utils'
 
 export interface TimeoutFnOptions {
@@ -19,13 +19,12 @@ export interface TimeoutFnOptions {
  * @param immediate
  */
 export function useTimeoutFn(
+  // eslint-disable-next-line no-unused-vars
   cb: (...args: unknown[]) => any,
   interval: MaybeRef<number>,
-  options: TimeoutFnOptions = {},
+  options: TimeoutFnOptions = {}
 ): Stopable {
-  const {
-    immediate = true,
-  } = options
+  const { immediate = true } = options
 
   const isPending = ref(false)
 
@@ -49,15 +48,13 @@ export function useTimeoutFn(
     timer = setTimeout(() => {
       isPending.value = false
       timer = null
-      // eslint-disable-next-line node/no-callback-literal
       cb(...args)
     }, unref(interval)) as unknown as number
   }
 
   if (immediate) {
     isPending.value = true
-    if (isClient)
-      start()
+    if (isClient) start()
   }
 
   tryOnScopeDispose(stop)

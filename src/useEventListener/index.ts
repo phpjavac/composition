@@ -1,6 +1,9 @@
-import { Fn, isString, MaybeRef, noop, } from '../utils'
-import { tryOnScopeDispose } from '../tryOnScopeDispose'
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-undef */
 import { unref, watch } from 'vue'
+import { Fn, isString, MaybeRef, noop } from '../utils'
+import tryOnScopeDispose from '../tryOnScopeDispose'
 import { defaultWindow } from '../_configurable'
 
 interface InferEventTarget<Events> {
@@ -25,7 +28,11 @@ export type GeneralEventListener<E = Event> = {
  * @param listener
  * @param options
  */
-export function useEventListener<E extends keyof WindowEventMap>(event: E, listener: (this: Window, ev: WindowEventMap[E]) => any, options?: boolean | AddEventListenerOptions): Fn
+export function useEventListener<E extends keyof WindowEventMap>(
+  event: E,
+  listener: (this: Window, ev: WindowEventMap[E]) => any,
+  options?: boolean | AddEventListenerOptions
+): Fn
 
 /**
  * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
@@ -38,7 +45,12 @@ export function useEventListener<E extends keyof WindowEventMap>(event: E, liste
  * @param listener
  * @param options
  */
-export function useEventListener<E extends keyof WindowEventMap>(target: Window, event: E, listener: (this: Window, ev: WindowEventMap[E]) => any, options?: boolean | AddEventListenerOptions): Fn
+export function useEventListener<E extends keyof WindowEventMap>(
+  target: Window,
+  event: E,
+  listener: (this: Window, ev: WindowEventMap[E]) => any,
+  options?: boolean | AddEventListenerOptions
+): Fn
 
 /**
  * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
@@ -51,7 +63,12 @@ export function useEventListener<E extends keyof WindowEventMap>(target: Window,
  * @param listener
  * @param options
  */
-export function useEventListener<E extends keyof DocumentEventMap>(target: Document, event: E, listener: (this: Document, ev: DocumentEventMap[E]) => any, options?: boolean | AddEventListenerOptions): Fn
+export function useEventListener<E extends keyof DocumentEventMap>(
+  target: Document,
+  event: E,
+  listener: (this: Document, ev: DocumentEventMap[E]) => any,
+  options?: boolean | AddEventListenerOptions
+): Fn
 
 /**
  * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
@@ -64,7 +81,12 @@ export function useEventListener<E extends keyof DocumentEventMap>(target: Docum
  * @param listener
  * @param options
  */
-export function useEventListener<Names extends string, EventType = Event>(target: InferEventTarget<Names>, event: Names, listener: GeneralEventListener<EventType>, options?: boolean | AddEventListenerOptions): Fn
+export function useEventListener<Names extends string, EventType = Event>(
+  target: InferEventTarget<Names>,
+  event: Names,
+  listener: GeneralEventListener<EventType>,
+  options?: boolean | AddEventListenerOptions
+): Fn
 
 /**
  * Register using addEventListener on mounted, and removeEventListener automatically on unmounted.
@@ -77,7 +99,12 @@ export function useEventListener<Names extends string, EventType = Event>(target
  * @param listener
  * @param options
  */
-export function useEventListener<EventType = Event>(target: MaybeRef<EventTarget | null | undefined>, event: string, listener: GeneralEventListener<EventType>, options?: boolean | AddEventListenerOptions): Fn
+export function useEventListener<EventType = Event>(
+  target: MaybeRef<EventTarget | null | undefined>,
+  event: string,
+  listener: GeneralEventListener<EventType>,
+  options?: boolean | AddEventListenerOptions
+): Fn
 
 export function useEventListener(...args: any[]) {
   let target: MaybeRef<EventTarget> | undefined
@@ -86,15 +113,13 @@ export function useEventListener(...args: any[]) {
   let options: any
 
   if (isString(args[0])) {
-    [event, listener, options] = args
+    ;[event, listener, options] = args
     target = defaultWindow
-  }
-  else {
-    [target, event, listener, options] = args
+  } else {
+    ;[target, event, listener, options] = args
   }
 
-  if (!target)
-    return noop
+  if (!target) return noop
 
   let cleanup = noop
 
@@ -102,8 +127,7 @@ export function useEventListener(...args: any[]) {
     () => unref(target),
     (el) => {
       cleanup()
-      if (!el)
-        return
+      if (!el) return
 
       el.addEventListener(event, listener, options)
 
@@ -112,7 +136,7 @@ export function useEventListener(...args: any[]) {
         cleanup = noop
       }
     },
-    { immediate: true, flush: 'post' },
+    { immediate: true, flush: 'post' }
   )
 
   const stop = () => {

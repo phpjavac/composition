@@ -1,10 +1,7 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-<div class="main"> 3333</div>
-
+  <div class="main">3333</div>
 </template>
 
 <style lang="stylus" scoped>
