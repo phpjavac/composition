@@ -68,6 +68,9 @@ export default defineUserConfig<DefaultThemeOptions>({
   base: "/composition/",
   title: "VueZApi",
   description: "Vue3的compositionApi's",
+  alias: {
+    '@lib': path.resolve(__dirname, '../../lib/'),
+  },
   themeConfig: {
     logo: "/images/logo.jpg",
     navbar: [

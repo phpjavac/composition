@@ -12,7 +12,7 @@ axios 的封装 compositionApi
 
 
 <script setup lang="ts">
-import { useRequest, Request } from "zcomposition";
+import { useRequest, Request } from "@lib";
 
 interface Hitokoto {
   from: string;
@@ -53,7 +53,7 @@ const { error, loading, response } = useRequest<Hitokoto>({
 
 
 ```typescript
-import { useRequest, Request } from "zcomposition";
+import { useRequest, Request } from "@lib";
 
 // 设置baseUrl
 Request.setOption({ baseURL: "https://v1.hitokoto.cn/" });

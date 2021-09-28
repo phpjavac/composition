@@ -10,8 +10,8 @@ category: Browser
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { usePermission } from 'zcomposition'
-import { useClipboard } from 'zcomposition'
+import { usePermission } from '@lib'
+import { useClipboard } from '@lib'
 const input = ref('')
 
 const { text, isSupported, copy } = useClipboard()

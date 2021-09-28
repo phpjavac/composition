@@ -21,7 +21,7 @@ const handleDownload = () => {
 ## 示例代码
 
 ```typescript
-import { useDownloader } from "zcomposition";
+import { useDownloader } from "@lib";
 
 const handleDownload = () => {
   // 默认会从url中提取文件名

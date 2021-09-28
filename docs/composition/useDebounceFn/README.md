@@ -7,7 +7,7 @@
 ## 基础使用
 
 <script setup lang='ts'>
-import { useDebounceFn } from "zcomposition";
+import { useDebounceFn } from "@lib";
 import { ref, onMounted, reactive, watch } from "vue";
 
 const count = ref(0)

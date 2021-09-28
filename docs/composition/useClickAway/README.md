@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { useClickAway } from "../../../../../../src";
+import { useClickAway } from "@lib";
 
 const target = ref<HTMLSpanElement>(null);
 const count = ref(0)

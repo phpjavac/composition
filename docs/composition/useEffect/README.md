@@ -22,29 +22,32 @@
 </div>
 
 <script setup lang="ts">
-import useEffect from "../../../../../../src/useEffect";
+import { useEffect } from "@lib";
+import { isClient } from '@lib/../src/utils';
 import { reactive } from 'vue';
 const data = reactive({
     need: 1,
     dont: 1
 })
-// 需要处理副效应
-useEffect(()=>{
-    const i = setInterval(()=>{
-        // console.log('this is interval, when Unmounted I`m destroy');
-        data.need += 1;
-    }, 2000);
-    return () => {
-        clearInterval(i);
-    }
-})
-// 不需要处理副效应
-useEffect(()=>{
-    const ii = setInterval(()=>{
-        // console.log('I`m interavl, but always')
-        data.dont += 1;
-    }, 2000)
-})
+if (isClient) {
+    // 需要处理副效应
+    useEffect(()=>{
+        const i = setInterval(()=>{
+            console.log('this is interval, when Unmounted I`m destroy');
+            data.need += 1;
+        }, 2000);
+        return () => {
+            clearInterval(i);
+        }
+    })
+    // 不需要处理副效应
+    useEffect(()=>{
+        const ii = setInterval(()=>{
+            console.log('I`m interavl, but always')
+            data.dont += 1;
+        }, 2000)
+    })
+}
 </script>
 
 ### 示例代码
