@@ -43,8 +43,8 @@ const children = [
     link: "/composition/useThrottleFn",
   },
   {
-    text: "useObserver",
-    link: "/composition/useObserver",
+    text: "useInViewport",
+    link: "/composition/useInViewport",
   },
   {
     text: "useClipboard",

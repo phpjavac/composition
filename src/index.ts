@@ -4,8 +4,8 @@ import useFullscreen from "./useFullscreen";
 import useDownloader from "./useDownloader";
 import { useClickAway } from "./useClickAway";
 import {useHover} from "./useHover";
-import { useObserver } from "./useObserver";
 import { useClipboard } from "./useClipboard";
+import { useInViewport } from "./useInViewport";
 import { usePermission } from "./usePermission";
 import useKeyPress from "./useKeyPress";
 import useDebounceFn from "./useDebounceFn"
@@ -24,7 +24,7 @@ export {
     useHover,
     useClipboard,
     usePermission,
-    useObserver,
+    useInViewport,
     useKeyPress,
     useThrottleFn,
     useDebounceFn
