@@ -7,7 +7,7 @@
 ```typescript
 
 <script setup lang='ts'>
-import {useFullscreen} from "zcomposition";
+import {useFullscreen} from "@lib";
 import { ref } from 'vue'
 
 const divRef = ref<HTMLElement | null>(null);
@@ -35,7 +35,7 @@ const { setFull, exitFull, toggleFull, isFullscreen } = useFullscreen(divRef, { 
   </div>
 
 <script setup lang='ts'>
-import {useFullscreen} from "zcomposition";
+import {useFullscreen} from "@lib";
 import { ref } from 'vue'
 
 const divRef = ref<HTMLElement | null>(null);

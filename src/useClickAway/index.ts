@@ -1,10 +1,9 @@
-import { isArray } from "lodash";
-import { Ref, onMounted, onBeforeUnmount } from "vue";
+import { Ref, onMounted, onBeforeUnmount } from 'vue'
 
 export interface UseClickAwayOption {
   // eslint-disable-next-line no-unused-vars
-  onClickAway: (event: MouseEvent | TouchEvent) => void;
-  target: Ref<HTMLElement | HTMLElement[]>;
+  onClickAway: (event: MouseEvent | TouchEvent) => void
+  target: Ref<HTMLElement | HTMLElement[]>
 }
 
 /**
@@ -14,25 +13,25 @@ export interface UseClickAwayOption {
  */
 const useClickAway = ({ onClickAway, target }: UseClickAwayOption) => {
   const callback = (event: MouseEvent | TouchEvent) => {
-    if (isArray(target.value)) {
+    if (Array.isArray(target.value)) {
       if (!target.value.length) {
-        throw new Error("目标元素数组不能为空");
+        throw new Error('目标元素数组不能为空')
       }
       if (!target.value.includes(event.target as any)) {
-        onClickAway(event);
+        onClickAway(event)
       }
     } else if (target.value !== event.target) {
       if (onClickAway) {
-        onClickAway(event);
+        onClickAway(event)
       }
     }
-  };
+  }
   onMounted(() => {
-    window.addEventListener("click", callback);
-  });
+    window.addEventListener('click', callback)
+  })
   onBeforeUnmount(() => {
-    window.removeEventListener("click", callback);
-  });
-};
+    window.removeEventListener('click', callback)
+  })
+}
 
-export { useClickAway };
+export { useClickAway }

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "target": "ES6",
+    "outDir": "./lib",
+    "sourceMap": true, 
+    "declaration": true, // 生成声明文件
+    // "emitDeclarationOnly": true
+    "moduleResolution": "node", // 标记指定使用哪种模块解析策略 node/classic
+    "allowSyntheticDefaultImports": true, // 允许对不包含默认导出的模块使用默认导入
+    "baseUrl": "./",
+    "paths": {
+      "@lib/*": ["lib"],
+    }
+  },
+  "include": [
+    "src/index.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+}

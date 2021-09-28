@@ -1,0 +1,34 @@
+name: feat
+description: 新特性、新功能
+title: "[feat]: "
+labels: ["enhancement", "triage"]
+assignees:
+  - octocat
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 使用场景
+      description: 该特性的使用场景，或该特性可以实现什么功能，解决了什么痛点。
+      placeholder: Characteristic description
+      value: "新特性使用场景"
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: 类型
+      description: 新特性类型
+      options:
+        - 新钩子 (之前没有，新加的功能)
+        - 新功能 (在原有的功能上拓展新功能)
+    validations:
+      required: true
+  - type: textarea
+    id: remark
+    attributes:
+      label: 参数、回调或其他补充
+      description: 预期参数、回调、异常信息
+      placeholder: 补充
+    validations:
+      required: true

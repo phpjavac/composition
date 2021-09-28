@@ -4,7 +4,7 @@
 
 ## 基本用法,传入Dom元素
 <script setup lang='ts'>
-import { useHover } from "zcomposition";
+import { useHover } from "@lib";
 import { ref, onMounted } from "vue";   
  const divRef = ref()
  const isHovering = useHover(() =>divRef.value);

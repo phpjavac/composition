@@ -1,24 +1,66 @@
 {
   "name": "zcomposition",
-  "version": "0.0.5",
+  "version": "0.6.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "build": "node build/esbuild.js",
+    "lint:fix": "npx eslint --fix src/**/**/**/** --ext .js,.ts,.vue",
+    "prepare": "husky install && node ./scripts/commitMsgHook.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.vue": [
+      "eslint --fix"
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.15.6",
     "axios": "^0.21.4",
+    "babel-plugin-import": "^1.13.3",
+    "esbuild": "^0.13.2",
+    "esbuild-plugin-d.ts": "^1.0.6",
     "file-saver": "^2.0.5",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "screenfull": "^5.1.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
     "vue": "^3.2.11",
-    "zcomposition": "0.0.5"
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@types/file-saver": "^2.0.3",
+    "@types/lodash": "^4.14.173",
+    "@typescript-eslint/parser": "^4.31.2",
+    "@vue/eslint-config-airbnb": "^5.3.0",
+    "babel-eslint": "^10.1.0",
+    "commitlint-plugin-function-rules": "^1.4.0",
+    "devmoji": "^2.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.18.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "vue-eslint-parser": "^7.11.0",
+    "vue-tsc": "^0.3.0",
     "vuepress": "^2.0.0-beta.26"
   }
 }
