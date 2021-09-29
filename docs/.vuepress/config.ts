@@ -65,7 +65,11 @@ const Effect = [
   {
     text: 'useThrottleFn',
     link: '/composition/Effect/useThrottleFn/'
-  }
+  },
+  {
+    text: "useTitle",
+    link: "/composition/useTitle",
+  },
 ]
 const children = [
   {

@@ -37,7 +37,6 @@ export interface UsePermissionReturnWithControls {
 /**
  * Reactive Permissions API.
  *
- * @see https://vueuse.org/usePermission
  */
 export function usePermission(
   permissionDesc:

@@ -11,6 +11,7 @@ import useKeyPress from './useKeyPress'
 import useDebounceFn from './useDebounceFn'
 import useThrottleFn from './useThrottleFn'
 import useEffect from './useEffect'
+import useTitle from './useTitle'
 
 export {
   useRequest,
@@ -26,5 +27,6 @@ export {
   useKeyPress,
   useThrottleFn,
   useDebounceFn,
-  useEffect
+  useEffect,
+  useTitle
 }
