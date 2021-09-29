@@ -49,6 +49,7 @@
     "@types/lodash": "^4.14.173",
     "@typescript-eslint/parser": "^4.31.2",
     "@vue/eslint-config-airbnb": "^5.3.0",
+    "@vuepress/plugin-search": "^2.0.0-beta.26",
     "babel-eslint": "^10.1.0",
     "commitlint-plugin-function-rules": "^1.4.0",
     "devmoji": "^2.3.0",
