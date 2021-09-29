@@ -9,63 +9,83 @@
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
 const path = require('path')
-const children = [
+const Async = [
   {
     text: "useRequest",
-    link: "/composition/useRequest",
+    link: "/composition/Async/useRequest/",
   },
+]
+const Element = [
   {
     text: "useSize",
-    link: "/composition/useSize",
-  },
-  {
-    text: "useDownloader",
-    link: "/composition/useDownloader/"
-  },
-  {
-    text: "useClickAway",
-    link: "/composition/useClickAway/"
-  },
-  {
-    text: "useFullscreen",
-    link: "/composition/useFullscreen",
-  },
-  {
-    text: "useHover",
-    link: "/composition/useHover",
-  },
-  {
-    text: "useDebounceFn",
-    link: "/composition/useDebounceFn",
-  },
-  {
-    text: "useThrottleFn",
-    link: "/composition/useThrottleFn",
+    link: "/composition/Element/useSize/",
   },
   {
     text: "useInViewport",
-    link: "/composition/useInViewport",
+    link: "/composition/Element/useInViewport/",
   },
   {
-    text: "useClipboard",
-    link: "/composition/useClipboard",
+    text: 'useClickAway',
+    link: '/composition/Element/useClickAway/'
   },
   {
-    text: "usePermission",
-    link: "/composition/usePermission",
+    text: 'useFullscreen',
+    link: '/composition/Element/useFullscreen/'
   },
   {
-    text: "useKeyPress",
-    link: "/composition/useKeyPress",
+    text: 'useHover',
+    link: '/composition/Element/useHover/'
+  }
+]
+const Effect = [
+  {
+    text: 'useClipboard',
+    link: "/composition/Effect/useClipboard/"
   },
   {
-    text: "useEffect",
-    link: "/composition/useEffect",
+    text: 'useDebounceFn',
+    link: '/composition/Effect/useDebounceFn/'
   },
   {
+    text: 'useDownloader',
+    link: '/composition/Effect/useDownloader/'
+  },
+  {
+    text: 'useEffect',
+    link: '/composition/Effect/useEffect/'
+  },
+  {
+    text: 'useKeyPress',
+    link: '/composition/Effect/useKeyPress/'
+  },
+  {
+    text: 'usePermission',
+    link: '/composition/Effect/usePermission/'
+  },
+  {
+    text: 'useThrottleFn',
+    link: '/composition/Effect/useThrottleFn/'
+  }
+]
+const children = [
+  {
+    text: 'Async',
+    children: Async
+  },
+  {
+    text: 'Element',
+    children: Element
+  },
+  {
+<<<<<<< HEAD
     text: "useTitle",
     link: "/composition/useTitle",
   },
+=======
+    text: 'Effect',
+    children: Effect
+  }
+>>>>>>> 4ef5c4fe60cbb9a1438e26b9ac33644dd21ff540
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
