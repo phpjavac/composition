@@ -55,6 +55,10 @@ const Effect = [
     link: '/composition/Effect/useEffect/'
   },
   {
+    text: 'useEventBus',
+    link: '/composition/Effect/useEventBus'
+  },
+  {
     text: 'useKeyPress',
     link: '/composition/Effect/useKeyPress/'
   },
