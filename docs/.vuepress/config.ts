@@ -65,7 +65,11 @@ const Effect = [
   {
     text: 'useThrottleFn',
     link: '/composition/Effect/useThrottleFn/'
-  }
+  },
+  {
+    text: "useTitle",
+    link: "/composition/useTitle",
+  },
 ]
 const children = [
   {
@@ -77,15 +81,9 @@ const children = [
     children: Element
   },
   {
-<<<<<<< HEAD
-    text: "useTitle",
-    link: "/composition/useTitle",
-  },
-=======
     text: 'Effect',
     children: Effect
   }
->>>>>>> 4ef5c4fe60cbb9a1438e26b9ac33644dd21ff540
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
