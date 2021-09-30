@@ -114,7 +114,7 @@ const finalResult = useInViewport(targetDom, changeFunc)
 </style>
 ```
 
-## useSize OPTION
+## useInViewport OPTION
 
 | 参数   | 说明     | 类型                       | 默认值 |
 | ------ | -------- | -------------------------- | ------ |

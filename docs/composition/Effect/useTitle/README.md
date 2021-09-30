@@ -15,8 +15,8 @@ const title = useTitle(null)
 </script>
 
 <div style="margin-top:10px">
-  <note>Title</note>
-  <input style="margin-left:10px" v-model="title" type="text">
+  <div>Title</div>
+  <input style="margin-left:10px" v-model="title" type="text" />
 </div>
 
 
@@ -32,7 +32,7 @@ const title = useTitle(null)
 ```
 
 ```html
-<note>Title</note>
+<div>Title</div>
 <input v-model="title" type="text">
 ```
 
