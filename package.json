@@ -35,6 +35,7 @@
     "file-saver": "^2.0.5",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
+    "mitt": "^3.0.0",
     "screenfull": "^5.1.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.3",
