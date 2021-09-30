@@ -108,6 +108,10 @@ export default defineUserConfig<DefaultThemeOptions>({
         text: "compositionApi",
         children: children,
       },
+      {
+        text: "GitHub",
+        link: 'https://github.com/phpjavac/composition'
+      }
     ],
     sidebar: [
       {
@@ -117,8 +121,23 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         text: "compositionApi",
         children: children,
+      }
+    ],
+  },
+  plugins: [
+    [
+      '@vuepress/plugin-search',
+      {
+        locales: {
+          '/': {
+            placeholder: '请输入内容',
+          },
+          '/zh/': {
+            placeholder: '请输入内容',
+          },
+        },
+        maxSuggestions: 10, // 指定搜索结果的最大条数-5
       },
     ],
-
-  },
+  ],
 });
