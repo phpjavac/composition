@@ -72,7 +72,7 @@ const Effect = [
   },
   {
     text: "useTitle",
-    link: "/composition/useTitle",
+    link: "/composition/Effect/useTitle/",
   },
 ]
 const children = [
