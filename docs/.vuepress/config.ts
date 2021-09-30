@@ -1,14 +1,6 @@
-/*
- * @Author: your name
- * @Date: 2021-09-23 10:09:30
- * @LastEditTime: 2021-09-23 10:45:30
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \zcomposition\docs\.vuepress\config.ts
- */
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
-const path = require('path')
+const { path } = require('@vuepress/utils')
 const Async = [
   {
     text: "useRequest",
@@ -95,6 +87,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   title: "VueZApi",
   description: "Vue3的compositionApi's",
   alias: {
+    '@': path.resolve(__dirname, '../../'),
     '@lib': path.resolve(__dirname, '../../lib/'),
   },
   themeConfig: {
@@ -139,5 +132,18 @@ export default defineUserConfig<DefaultThemeOptions>({
         maxSuggestions: 10, // 指定搜索结果的最大条数-5
       },
     ],
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
   ],
+  markdown: {
+    importCode: { // 在文档中直接导入源码
+      handleImportPath(importPath) {
+        return importPath.replace('@', path.resolve(__dirname, '../../'))
+      }
+    }
+  },
 });
