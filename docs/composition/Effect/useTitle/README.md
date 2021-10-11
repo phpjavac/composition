@@ -2,7 +2,7 @@
 category: Browser
 ---
 
-# 使用许可
+# useTitle
 
 响应式文档标题
 
