@@ -27,6 +27,10 @@ const Element = [
   {
     text: 'useHover',
     link: '/composition/Element/useHover/'
+  },
+  {
+    text: 'useAnimation',
+    link: '/composition/Element/useAnimation/'
   }
 ]
 const Effect = [
