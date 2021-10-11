@@ -31,7 +31,7 @@ import { ref, onMounted } from "vue";
 
 <script setup lang='ts'>
 import {useHover} from "zcomposition";
-import { ref, onMounted, reactive, watch } from "vue";
+import { ref } from "vue";
     const divRef = ref()
     const isHovering = useHover(() => divRef.value);
 

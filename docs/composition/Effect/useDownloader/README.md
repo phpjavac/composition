@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useDownloader } from "../../../../../../src";
+import { useDownloader } from "@lib";
 
 const handleDownload = () => {
   useDownloader({url: "https://file-examples-com.github.io/uploads/2018/04/file_example_AVI_480_750kB.avi"})

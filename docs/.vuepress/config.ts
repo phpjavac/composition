@@ -1,59 +1,89 @@
 import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
-const path = require('path')
-const children = [
+const { path } = require('@vuepress/utils')
+const Async = [
   {
     text: "useRequest",
-    link: "/composition/useRequest",
+    link: "/composition/Async/useRequest/",
   },
+]
+const Element = [
   {
     text: "useSize",
-    link: "/composition/useSize",
-  },
-  {
-    text: "useDownloader",
-    link: "/composition/useDownloader/"
-  },
-  {
-    text: "useClickAway",
-    link: "/composition/useClickAway/"
-  },
-  {
-    text: "useFullscreen",
-    link: "/composition/useFullscreen",
-  },
-  {
-    text: "useHover",
-    link: "/composition/useHover",
-  },
-  {
-    text: "useDebounceFn",
-    link: "/composition/useDebounceFn",
-  },
-  {
-    text: "useThrottleFn",
-    link: "/composition/useThrottleFn",
+    link: "/composition/Element/useSize/",
   },
   {
     text: "useInViewport",
-    link: "/composition/useInViewport",
+    link: "/composition/Element/useInViewport/",
   },
   {
-    text: "useClipboard",
-    link: "/composition/useClipboard",
+    text: 'useClickAway',
+    link: '/composition/Element/useClickAway/'
   },
   {
-    text: "usePermission",
-    link: "/composition/usePermission",
+    text: 'useFullscreen',
+    link: '/composition/Element/useFullscreen/'
   },
   {
-    text: "useKeyPress",
-    link: "/composition/useKeyPress",
+    text: 'useHover',
+    link: '/composition/Element/useHover/'
   },
   {
-    text: "useEffect",
-    link: "/composition/useEffect",
+    text: 'useAnimation',
+    link: '/composition/Element/useAnimation/'
+  }
+]
+const Effect = [
+  {
+    text: 'useClipboard',
+    link: "/composition/Effect/useClipboard/"
   },
+  {
+    text: 'useDebounceFn',
+    link: '/composition/Effect/useDebounceFn/'
+  },
+  {
+    text: 'useDownloader',
+    link: '/composition/Effect/useDownloader/'
+  },
+  {
+    text: 'useEffect',
+    link: '/composition/Effect/useEffect/'
+  },
+  {
+    text: 'useEventBus',
+    link: '/composition/Effect/useEventBus'
+  },
+  {
+    text: 'useKeyPress',
+    link: '/composition/Effect/useKeyPress/'
+  },
+  {
+    text: 'usePermission',
+    link: '/composition/Effect/usePermission/'
+  },
+  {
+    text: 'useThrottleFn',
+    link: '/composition/Effect/useThrottleFn/'
+  },
+  {
+    text: "useTitle",
+    link: "/composition/Effect/useTitle/",
+  },
+]
+const children = [
+  {
+    text: 'Async',
+    children: Async
+  },
+  {
+    text: 'Element',
+    children: Element
+  },
+  {
+    text: 'Effect',
+    children: Effect
+  }
 ];
 export default defineUserConfig<DefaultThemeOptions>({
   lang: "en-CN",
@@ -61,6 +91,7 @@ export default defineUserConfig<DefaultThemeOptions>({
   title: "VueZApi",
   description: "Vue3的compositionApi's",
   alias: {
+    '@': path.resolve(__dirname, '../../'),
     '@lib': path.resolve(__dirname, '../../lib/'),
   },
   themeConfig: {
@@ -74,6 +105,10 @@ export default defineUserConfig<DefaultThemeOptions>({
         text: "compositionApi",
         children: children,
       },
+      {
+        text: "GitHub",
+        link: 'https://github.com/phpjavac/composition'
+      }
     ],
     sidebar: [
       {
@@ -83,8 +118,36 @@ export default defineUserConfig<DefaultThemeOptions>({
       {
         text: "compositionApi",
         children: children,
+      }
+    ],
+  },
+  plugins: [
+    [
+      '@vuepress/plugin-search',
+      {
+        locales: {
+          '/': {
+            placeholder: '请输入内容',
+          },
+          '/zh/': {
+            placeholder: '请输入内容',
+          },
+        },
+        maxSuggestions: 10, // 指定搜索结果的最大条数-5
       },
     ],
-
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
+  ],
+  markdown: {
+    importCode: { // 在文档中直接导入源码
+      handleImportPath(importPath) {
+        return importPath.replace('@', path.resolve(__dirname, '../../'))
+      }
+    }
   },
 });
