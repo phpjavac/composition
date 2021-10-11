@@ -1,6 +1,6 @@
 {
   "name": "zcomposition",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -50,6 +50,7 @@
     "@types/lodash": "^4.14.173",
     "@typescript-eslint/parser": "^4.31.2",
     "@vue/eslint-config-airbnb": "^5.3.0",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.26",
     "@vuepress/plugin-search": "^2.0.0-beta.26",
     "babel-eslint": "^10.1.0",
     "commitlint-plugin-function-rules": "^1.4.0",
