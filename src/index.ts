@@ -3,7 +3,7 @@ import useSize from './useSize'
 import useFullscreen from './useFullscreen'
 import useDownloader from './useDownloader'
 import { useClickAway } from './useClickAway'
-import useHover from './useHover'
+// import useHover from './useHover'
 import { useClipboard } from './useClipboard'
 import useInViewport from './useInViewport'
 import { usePermission } from './usePermission'
@@ -22,7 +22,7 @@ export {
   useDownloader,
   useClickAway,
   useFullscreen,
-  useHover,
+  // useHover,
   useClipboard,
   usePermission,
   useInViewport,
