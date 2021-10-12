@@ -70,6 +70,10 @@ const Effect = [
     text: "useTitle",
     link: "/composition/Effect/useTitle/",
   },
+  {
+    text: "useVModel",
+    link: "/composition/Effect/useModel/",
+  }
 ]
 const children = [
   {
