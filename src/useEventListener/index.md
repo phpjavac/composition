@@ -1,0 +1,31 @@
+---
+category: Browser
+---
+
+# useEventListener
+
+Use EventListener with ease. Register using [addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) on mounted, and [removeEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener) automatically on unmounted.
+
+## Usage
+
+```js
+import { useEventListener } from 'zcomposition'
+
+useEventListener(document, 'visibilitychange', (evt) => { console.log(evt) })
+```
+
+You can also pass a ref as the event target, `useEventListener` will unregister the previous event and register the new one when you change the target.
+
+```ts
+import { useEventListener } from 'zcomposition'
+
+const element = ref<HTMLDivElement>()
+useEventListener(element, 'keydown', (e) => { console.log(e.key) })
+```
+
+```html
+<template>
+  <div v-if="cond" ref="element">Div1</div>
+  <div v-else ref="element">Div2</div>
+</template>
+```
