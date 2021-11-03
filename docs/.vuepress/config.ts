@@ -21,6 +21,10 @@ const Element = [
     link: '/composition/Element/useClickAway/'
   },
   {
+    text: 'useAwaitDom',
+    link: '/composition/Element/useAwaitDom'
+  },
+  {
     text: 'useFullscreen',
     link: '/composition/Element/useFullscreen/'
   },
