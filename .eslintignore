@@ -2,6 +2,8 @@ node_modules
 .temp
 .cache
 .DS_Store
+docs
+.md
 lib
 package-lock.json
 yarn.lock

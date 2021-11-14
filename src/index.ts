@@ -1,9 +1,10 @@
 import { useRequest, Request } from './useRequest'
+import useAsync from './useAsync'
 import useSize from './useSize'
 import useFullscreen from './useFullscreen'
 import useDownloader from './useDownloader'
 import { useClickAway } from './useClickAway'
-// import useHover from './useHover'
+import useHover from './useHover'
 import { useClipboard } from './useClipboard'
 import useInViewport from './useInViewport'
 import { usePermission } from './usePermission'
@@ -16,13 +17,14 @@ import { useEventBus } from './useEventBus'
 import useAnimation from './useAnimation';
 
 export {
+  useAsync,
   useRequest,
   Request,
   useSize,
   useDownloader,
   useClickAway,
   useFullscreen,
-  // useHover,
+  useHover,
   useClipboard,
   usePermission,
   useInViewport,

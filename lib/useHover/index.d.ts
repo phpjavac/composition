@@ -1,7 +1,8 @@
-import { BasicTarget } from '../utils/dom';
-interface Options {
-    onEnter?: () => void;
-    onLeave?: () => void;
+interface hoverOptionType {
+    target: HTMLElement;
+    persistent?: boolean;
+    isDebounce?: boolean;
+    delay?: number | number[] | undefined;
 }
-export default function useHover(target: BasicTarget, options?: Options): import("vue").Ref<boolean>;
-export {};
+declare const useHover: (options: hoverOptionType, fnF: () => void, fnS: () => void) => void;
+export default useHover;

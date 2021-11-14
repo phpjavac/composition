@@ -24,7 +24,7 @@ const msg2 = ref('dom2 加载中...')
  * 用法1：传入一个dom选择器函数
  */
 useAwaitDom({
-  domSelector: () => document.querySelector('#use-await-dom-test'),
+  domSelector: () => document && document.querySelector('#use-await-dom-test'),
 }).then((dom) => {
   msg.value = 'dom1 加载完成'
   console.log('async dom1 loaded', dom)

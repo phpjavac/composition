@@ -1,13 +1,13 @@
 {
   "name": "zcomposition",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build": "node build/esbuild.js",
-    "lint:fix": "npx eslint --fix src/**/**/**/** --ext .js,.ts,.vue",
+    "lint:fix": "eslint --fix src/**/**/**/** --ext .js,.ts,.vue",
     "prepare": "husky install && node ./scripts/commitMsgHook.js"
   },
   "lint-staged": {

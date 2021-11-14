@@ -1,4 +1,5 @@
 import { useRequest, Request } from './useRequest';
+import useAsync from './useAsync';
 import useSize from './useSize';
 import useFullscreen from './useFullscreen';
 import useDownloader from './useDownloader';
@@ -14,4 +15,4 @@ import useEffect from './useEffect';
 import useTitle from './useTitle';
 import { useEventBus } from './useEventBus';
 import useAnimation from './useAnimation';
-export { useRequest, Request, useSize, useDownloader, useClickAway, useFullscreen, useHover, useClipboard, usePermission, useInViewport, useKeyPress, useThrottleFn, useDebounceFn, useEffect, useTitle, useEventBus, useAnimation };
+export { useAsync, useRequest, Request, useSize, useDownloader, useClickAway, useFullscreen, useHover, useClipboard, usePermission, useInViewport, useKeyPress, useThrottleFn, useDebounceFn, useEffect, useTitle, useEventBus, useAnimation };

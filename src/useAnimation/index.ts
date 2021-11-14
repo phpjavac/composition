@@ -1,4 +1,3 @@
-import { onUnmounted, ref } from 'vue';
 import gsap from 'gsap';
 import { BasicTarget, getTargetElement } from '../utils/dom'
 
