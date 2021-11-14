@@ -3,17 +3,21 @@
 等待dom出现然后执行...
 
 ## 代码演示
-
-<useAwaitDomDemo />
+  <component v-if="dynamicComponent" :is="dynamicComponent"></component>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-import useAwaitDomDemo from '@/src/useAwaitDom/demo.vue'
+import { ref, reactive, onMounted } from 'vue'
+const dynamicComponent = ref(null);
+onMounted(()=>{
+        import('@/src/useAwaitDom/demo.vue').then(module => {
+      this.dynamicComponent = "useAwaitDomDemo"
+    })
+}) 
 </script>
 
 ### 基础使用
 
-@[code](@/src/useAwaitDom/demo.vue)
+<!-- @[code](@/src/useAwaitDom/demo.vue) -->
 
 ### 参数
 

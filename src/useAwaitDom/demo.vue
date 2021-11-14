@@ -8,11 +8,13 @@ const child2 = ref(null as HTMLDivElement)
 
 onMounted(() => {
   setTimeout(() => {
-    const child = document.createElement('div')
-    child.setAttribute('class', 'border')
-    child.setAttribute('id', 'use-await-dom-test')
-    child.innerText = '我是dom1的异步子组件'
-    father.value.appendChild(child)
+    if (document) {
+      const child = document.createElement('div')
+      child.setAttribute('class', 'border')
+      child.setAttribute('id', 'use-await-dom-test')
+      child.innerText = '我是dom1的异步子组件'
+      father.value.appendChild(child)
+    }
     showDom.value = true
   }, 2000)
 })
@@ -26,7 +28,7 @@ const msg2 = ref('dom2 加载中...')
 useAwaitDom({
   // eslint-disable-next-line consistent-return
   domSelector: () => {
-    if (document) {
+    if (window && window.document) {
       return document.querySelector('#use-await-dom-test')
     }
   },
