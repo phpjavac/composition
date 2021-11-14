@@ -9,7 +9,7 @@ const child2 = ref(null as HTMLDivElement)
 onMounted(() => {
   setTimeout(() => {
     const child = document.createElement('div')
-    child.setAttribute('class', 'border');
+    child.setAttribute('class', 'border')
     child.setAttribute('id', 'use-await-dom-test')
     child.innerText = '我是dom1的异步子组件'
     father.value.appendChild(child)
@@ -24,7 +24,12 @@ const msg2 = ref('dom2 加载中...')
  * 用法1：传入一个dom选择器函数
  */
 useAwaitDom({
-  domSelector: () => document && document.querySelector('#use-await-dom-test'),
+  // eslint-disable-next-line consistent-return
+  domSelector: () => {
+    if (document) {
+      return document.querySelector('#use-await-dom-test')
+    }
+  },
 }).then((dom) => {
   msg.value = 'dom1 加载完成'
   console.log('async dom1 loaded', dom)
@@ -44,7 +49,7 @@ useAwaitDom({ domSelector: child2 }).then((dom) => {
       <div>{{ msg }}</div>
     </div>
     <div class="border" v-if="showDom" ref="child2">{{ msg2 }}</div>
-    <div class="border" v-else>{{msg2}}</div>
+    <div class="border" v-else>{{ msg2 }}</div>
   </div>
 </template>
 <style lang="scss" scoped>
