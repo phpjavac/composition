@@ -4,5 +4,5 @@ interface UseAsync<T> {
     loading: Ref<boolean>;
     response: Ref<UnwrapRef<T>>;
 }
-declare const useAsync: <T>(promise: () => Promise<UnwrapRef<T>>, hook?: () => void) => UseAsync<T>;
+declare const useAsync: <T>(promise: () => Promise<any>, hook?: () => void) => UseAsync<T>;
 export default useAsync;

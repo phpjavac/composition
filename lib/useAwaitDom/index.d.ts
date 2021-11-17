@@ -14,5 +14,5 @@ interface IUseAwaitDomOptions {
  * @param param0 IUseAwaitDomOptions
  * @returns Promise
  */
-declare const useAwaitDom: ({ domSelector, maxWait, }: IUseAwaitDomOptions) => Promise<HTMLElement | Ref<HTMLElement>>;
+declare const useAwaitDom: ({ domSelector, maxWait, }: IUseAwaitDomOptions) => Promise<any>;
 export default useAwaitDom;

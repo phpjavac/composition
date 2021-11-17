@@ -1,3 +1,4 @@
+import gsap from 'gsap';
 import { BasicTarget } from '../utils/dom';
 interface Options {
     xMove?: number | (() => number);

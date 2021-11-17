@@ -1,4 +1,3 @@
-import { MaybeRef } from '../utils';
 import { ConfigurableDocument } from '../_configurable';
 export interface UseTitleOptions extends ConfigurableDocument {
     /**
@@ -14,5 +13,5 @@ export interface UseTitleOptions extends ConfigurableDocument {
  * @param newTitle
  * @param options
  */
-declare const useTitle: (newTitle?: MaybeRef<string | null | undefined>, options?: UseTitleOptions) => import("vue").Ref<string>;
+declare const useTitle: (newTitle?: any, options?: UseTitleOptions) => any;
 export default useTitle;

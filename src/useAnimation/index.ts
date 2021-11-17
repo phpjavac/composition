@@ -17,7 +17,7 @@ interface Options {
     yoyo?:boolean
     startAt?:Object
 }
-export default function useAnimation(target:BasicTarget,parameter?:Options) {
+export default function useAnimation(target:BasicTarget,parameter?:Options): gsap.core.Tween {
   const targetElement = getTargetElement(target)
   const tween = gsap.to(targetElement,{
     x:parameter.xMove,
