@@ -45,5 +45,22 @@ npm install babel-plugin-import
 ```
 
 #### 在vite中
-
-由于vite是默认按需引用的的，所以不需要特殊配置
+1. 下载`vite-plugin-importer`
+```
+npm install vite-plugin-importer
+```
+2.在`vite.config.js`文件
+``` js
+// vite.config.js
+{
+    "plugins": [
+        ...
+        usePluginImport({
+        libraryName: "zcomposition",
+        libraryDirectory: "lib",
+        camel2DashComponentName: false
+        }),
+        ...
+    ]
+}
+```
