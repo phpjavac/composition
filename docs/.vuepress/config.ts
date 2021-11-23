@@ -10,6 +10,10 @@ const Async = [
     text: "useAsync",
     link: "/composition/Async/useAsync/",
   },
+  {
+    text: "useWaitTime",
+    link: "/composition/Async/useWaitTime/"
+  }
 ]
 const Element = [
   {

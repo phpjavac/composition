@@ -28,6 +28,7 @@
     "@babel/core": "^7.15.5",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.15.6",
+    "@findsoft/ws-heartbeat-ts": "^0.8.0",
     "axios": "^0.21.4",
     "babel-plugin-import": "^1.13.3",
     "esbuild": "^0.13.2",
