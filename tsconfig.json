@@ -5,7 +5,7 @@
     "outDir": "./lib",
     "sourceMap": true, 
     "declaration": true, // 生成声明文件
-    // "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
     "moduleResolution": "node", // 标记指定使用哪种模块解析策略 node/classic
     "typeRoots": ["./node_modules/@types"],
     "allowSyntheticDefaultImports": true, // 允许对不包含默认导出的模块使用默认导入
@@ -14,7 +14,8 @@
       "@/*": ["*"],
       "@lib/*": ["lib"],
       "@src/*": ["src"]
-    }
+    },
+    "types": ["vite/client"]
   },
   "include": [
     "types/*.ts", "src/**/*.ts", "src/**/*.vue", "tests/**/*.ts", "docs/.vuepress/components/**/*.vue"

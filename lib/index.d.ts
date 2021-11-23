@@ -14,6 +14,4 @@ import useThrottleFn from './useThrottleFn';
 import useEffect from './useEffect';
 import useTitle from './useTitle';
 import { useEventBus } from './useEventBus';
-import useAnimation from './useAnimation';
-import useWaitTime from './useWaitTime';
-export { useAsync, useRequest, Request, useSize, useDownloader, useClickAway, useFullscreen, useHover, useClipboard, usePermission, useInViewport, useKeyPress, useThrottleFn, useDebounceFn, useEffect, useTitle, useEventBus, useWaitTime, useAnimation };
+export { useAsync, useRequest, Request, useSize, useDownloader, useClickAway, useFullscreen, useHover, useClipboard, usePermission, useInViewport, useKeyPress, useThrottleFn, useDebounceFn, useEffect, useTitle, useEventBus, };
