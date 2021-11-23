@@ -14,6 +14,7 @@ import useThrottleFn from './useThrottleFn'
 import useEffect from './useEffect'
 import useTitle from './useTitle'
 import { useEventBus } from './useEventBus'
+import useWaitTime from './useWaitTime'
 
 export {
   useAsync,
@@ -33,4 +34,5 @@ export {
   useEffect,
   useTitle,
   useEventBus,
+  useWaitTime,
 }
