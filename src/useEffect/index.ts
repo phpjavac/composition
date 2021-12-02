@@ -1,4 +1,4 @@
-import { onUnmounted } from 'vue'
+import { onUnmounted, watch, toRefs } from 'vue'
 
 type UseEffectVoid = () => void // 不需要处理副效应
 type UseEffectFunVoid = () => () => void // 需要处理副效应
@@ -16,10 +16,19 @@ const isUseEffectFunVoid = (arg: void | (() => void)): arg is UseEffectVoid =>
  */
 const useEffect = (
   method: UseEffectVoid | UseEffectFunVoid,
-  // eslint-disable-next-line no-unused-vars
   needWatch?: any[]
 ) => {
   const fn = method()
+  /** 处理watch */
+  if (needWatch && needWatch.length > 0) {
+    watch([...toRefs(needWatch)], () => {
+      method()
+    },{
+      /** ref对象不需要深度监听，但是reactive需要 */
+      deep: true
+    })
+  }
+  /** 清除副作用 */
   if (isUseEffectFunVoid(fn)) {
     onUnmounted(fn)
   }
