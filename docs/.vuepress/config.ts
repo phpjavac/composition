@@ -81,6 +81,10 @@ const Effect = [
   {
     text: "useVModel",
     link: "/composition/Effect/useModel/",
+  },
+  {
+    text: "useGlobalStore",
+    link: "/composition/Effect/useGlobalStore/"
   }
 ]
 const children = [
