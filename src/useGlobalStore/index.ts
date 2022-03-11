@@ -17,6 +17,7 @@ class GlobalStore<T> {
   }
 }
 
+let hasInstance = false;
 /**
  * 初始化、使用全局仓库
  * @param option 需要初始化的数据
@@ -24,10 +25,13 @@ class GlobalStore<T> {
  */
 export default function useGlobalStore<T>(option?: T): T {
   const instance = GlobalStore.getInstance();
-  if (option) {
-    instance.setStore(option)
-  } else {
-    console.warn('Global store has been initialized');
+  if (option !== undefined) {
+    if (!hasInstance) {
+      instance.setStore(option);
+      hasInstance = true;
+    } else {
+      console.warn('Global store has been initialized');
+    }
   }
   return instance.store as T
 }
