@@ -15,6 +15,7 @@ import useEffect from './useEffect'
 import useTitle from './useTitle'
 import { useEventBus } from './useEventBus'
 import useWaitTime from './useWaitTime'
+import useGlobalStore from './useGlobalStore'
 
 export {
   useAsync,
@@ -35,4 +36,5 @@ export {
   useTitle,
   useEventBus,
   useWaitTime,
+  useGlobalStore,
 }
