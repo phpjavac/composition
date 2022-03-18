@@ -39,7 +39,11 @@ const Element = [
   {
     text: 'useHover',
     link: '/composition/Element/useHover/'
-  }
+  },
+  {
+    text: "useFocus",
+    link: "/composition/Element/useFocus/",
+  },
 ]
 const Effect = [
   {

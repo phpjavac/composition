@@ -5,6 +5,7 @@ import useFullscreen from './useFullscreen'
 import useDownloader from './useDownloader'
 import { useClickAway } from './useClickAway'
 import useHover from './useHover'
+import useFocus from './useFocus'
 import { useClipboard } from './useClipboard'
 import useInViewport from './useInViewport'
 import { usePermission } from './usePermission'
@@ -22,6 +23,7 @@ export {
   useRequest,
   Request,
   useSize,
+  useFocus,
   useDownloader,
   useClickAway,
   useFullscreen,
