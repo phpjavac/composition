@@ -2,25 +2,31 @@
 
 校验输入框聚焦及失焦事件
 
-## 基本用法,传入Dom元素
+## 基本用法--页面挂载完毕后传入Dom元素(单Dom/Dom列表)
+
 <script setup lang='ts'>
 import { useFocus } from "@lib";
-import { ref } from "vue";   
+import { ref, onMounted } from "vue";   
 
 const domRef = ref<HTMLElement>();
+const domRef2 = ref<HTMLElement>();
 const status = ref(false);
 
-useFocus(domRef, (event: FocusEvent) => {
-  if(event.type === 'focus') {
-    status.value = true;
-  } else {
-    status.value = false;
-  }
+onMounted(() => {
+  useFocus([domRef2.value, domRef.value], (event: FocusEvent) => {
+    console.info(event.target)
+    if(event.type === 'focus') {
+      status.value = true;
+    } else {
+      status.value = false;
+    }
+  })
 })
 </script>
 
 <div>
-  <input type="text" ref="domRef" />
+  <input type="text" ref="domRef" /><br /><br />
+  <textarea type="text" ref="domRef2"></textarea>
   <span>状态：{{ status }} </span>
 </div>
 
@@ -36,17 +42,20 @@ useFocus(domRef, (event: FocusEvent) => {
 
 <script setup lang='ts'>
 import { useFocus } from "@lib";
-import { ref } from "vue";   
+import { ref, onMounted } from "vue";   
 
 const domRef = ref<HTMLElement>();
+const domRef2 = ref<HTMLElement>();
 const status = ref(false);
 
-useFocus(domRef, (event: FocusEvent) => {
-  if(event.type === 'focus') {
-    status.value = true;
-  } else {
-    status.value = false;
-  }
+onMounted(() => {
+  useFocus([domRef2.value, domRef.value], (event: FocusEvent) => {
+    if(event.type === 'focus') {
+      status.value = true;
+    } else {
+      status.value = false;
+    }
+  })
 })
 </script>
 

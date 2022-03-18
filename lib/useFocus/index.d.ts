@@ -1,3 +1,2 @@
-import { Ref } from 'vue';
-declare const useFocus: (documentElement: Ref, fn: Function) => void;
+declare const useFocus: () => void;
 export default useFocus;
