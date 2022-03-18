@@ -3,12 +3,4 @@
         "source.fixAll.eslint": true
     },
     "eslint.lintTask.enable": false,
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": ".ts",
-                "cmd": "yarn build"
-            }
-        ]
-    }
 }
