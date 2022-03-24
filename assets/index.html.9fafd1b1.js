@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"",lang:"en-CN",frontmatter:{home:!0,heroImage:"/images/logo.jpg",actions:[{text:"\u5FEB\u901F\u4E0A\u624B",link:"/guide/",type:"primary"}]},excerpt:"",headers:[],git:{updatedTime:1631696145e3,contributors:[{name:"MagicQ",email:"magicq@MagicQdeMacBook-Pro.local",commits:2}]},filePathRelative:"README.md"};export{e as data};

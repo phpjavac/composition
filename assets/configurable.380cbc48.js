@@ -1,0 +1,1 @@
+import"./app.069b597e.js";const o=typeof window!="undefined",i=n=>typeof n=="string",d=()=>{},s=o?window:void 0,a=o?window.document:void 0,e=o?window.navigator:void 0;export{i as a,s as b,a as c,e as d,o as i,d as n};

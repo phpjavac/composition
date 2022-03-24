@@ -1,0 +1,1 @@
+import{k as a}from"./app.069b597e.js";class e{setStore(t){this.store=t}static getInstance(){return e.instance||(e.instance=a(new e)),e.instance}}let n=!1;function c(s){const t=e.getInstance();return s!==void 0&&(n?console.warn("Global store has been initialized"):(t.setStore(s),n=!0)),t.store}export{c as u};
