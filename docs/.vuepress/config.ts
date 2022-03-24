@@ -127,7 +127,8 @@ export default defineUserConfig<DefaultThemeOptions>({
       },
       {
         text: "GitHub",
-        link: 'https://github.com/phpjavac/composition'
+        // link: 'https://github.com/phpjavac/composition'
+        link: 'https://teaping.github.io/composition'
       }
     ],
     sidebar: [
