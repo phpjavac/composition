@@ -7,7 +7,7 @@
 import { useHover } from "@lib";
 import { ref, onMounted } from "vue";   
  const divRef = ref()
- const isHovering = ref()
+ const isHovering = ref(false) as boolean
  onMounted(() => {
      isHovering.value = useHover( {target: divRef.value}, () => console.log('移入'), () =>console.log('移出'));
  })
@@ -25,18 +25,18 @@ import { ref, onMounted } from "vue";
 ```vue
 <template>
     <div>
-    <div ref="divRef"
-         style="width: 200px; height: 200px; background:pink"
-    >
-    </div>isHovering:<span style="color: red"> {{ isHovering }} </span>
-</div>
+        <div ref="divRef"
+        style="width: 200px; height: 200px; background:pink"
+        ></div>
+        isHovering:<span style="color:red"> {{ isHovering }} </span>
+    </div>
 </template>
 
 <script setup lang='ts'>
 import { useHover } from "zcomposition";
 import { ref, onMounted } from "vue";   
  const divRef = ref()
- const isHovering = ref()
+ const isHovering = ref(false) as boolean
  onMounted(() => {
      isHovering.value = useHover( {target: divRef.value}, () => console.log('移入'), () =>console.log('移出'));
  })
