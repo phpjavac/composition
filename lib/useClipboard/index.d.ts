@@ -1,6 +1,6 @@
 import { ComputedRef } from 'vue';
 import { MaybeRef } from '../utils/index';
-import { ConfigurableNavigator } from '../_configurable';
+import { ConfigurableNavigator } from '../configurable';
 export interface ClipboardOptions<Source> extends ConfigurableNavigator {
     /**
      * Enabled reading for clipboard

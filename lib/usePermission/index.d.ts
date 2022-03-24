@@ -1,6 +1,6 @@
 import { Ref } from 'vue';
 import { PermissionDescriptor } from '../utils';
-import { ConfigurableNavigator } from '../_configurable';
+import { ConfigurableNavigator } from '../configurable';
 declare type DescriptorNamePolyfill = 'clipboard-read' | 'clipboard-write' | 'camera' | 'microphone' | 'speaker';
 export declare type GeneralPermissionDescriptor = PermissionDescriptor | {
     name: DescriptorNamePolyfill;

@@ -4,7 +4,7 @@
 import { unref, watch } from 'vue'
 import { Fn, isString, MaybeRef, noop } from '../utils'
 import tryOnScopeDispose from '../tryOnScopeDispose'
-import { defaultWindow } from '../_configurable'
+import { defaultWindow } from '../configurable'
 
 interface InferEventTarget<Events> {
   addEventListener(event: Events, fn?: any, options?: any): any

@@ -4,7 +4,7 @@
 import { Ref, ref } from 'vue'
 import { createSingletonPromise, PermissionDescriptor } from '../utils'
 import { useEventListener } from '../useEventListener'
-import { ConfigurableNavigator, defaultNavigator } from '../_configurable'
+import { ConfigurableNavigator, defaultNavigator } from '../configurable'
 
 type DescriptorNamePolyfill =
   | 'clipboard-read'

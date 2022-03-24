@@ -1,18 +1,7 @@
 import { ref, watch } from 'vue'
-// import { isString, MaybeRef } from '../utils'
-// import { ConfigurableDocument, defaultDocument } from '../_configurable'
-import { isClient, MaybeRef, isString } from '../utils'
-
-const defaultDocument = /* #__PURE__ */ isClient
-  ? window.document
-  : undefined
+import { isString, MaybeRef } from '../utils'
+import { ConfigurableDocument, defaultDocument } from '../configurable'
 // import { useMutationObserver } from '../useMutationObserver'
-interface ConfigurableDocument {
-  /*
-   * Specify a custom `document` instance, e.g. working with iframes or in testing environments.
-   */
-  document?: Document
-}
 
 export interface UseTitleOptions extends ConfigurableDocument {
   /**

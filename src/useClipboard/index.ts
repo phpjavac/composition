@@ -6,7 +6,7 @@ import { ComputedRef, ref, unref } from 'vue'
 import { MaybeRef } from '../utils/index'
 import { useTimeoutFn } from '../useTimeoutFn'
 import { useEventListener, WindowEventName } from '../useEventListener'
-import { ConfigurableNavigator, defaultNavigator } from '../_configurable'
+import { ConfigurableNavigator, defaultNavigator } from '../configurable'
 
 export interface ClipboardOptions<Source> extends ConfigurableNavigator {
   /**
