@@ -12,7 +12,7 @@ category: Browser
 import { computed, reactive } from 'vue'
 import YAML from 'js-yaml'
 import { usePermission } from '@lib'
-
+console.log(usePermission);
 const geolocation = usePermission('geolocation')
 const microphone = usePermission('microphone')
 const notifications = usePermission('notifications')
