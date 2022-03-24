@@ -1,3 +1,4 @@
+import { ref } from "vue"
 
 const debounce = (fn: () => void, delay: number) => {
   let timer: ReturnType<typeof setTimeout>
@@ -19,9 +20,9 @@ const useHover = (options: hoverOptionType, fnF: () => void, fnS: () => void) =>
 
   // const body = document.getElementByI
   const { target, persistent = false, isDebounce = false, delay = 500 } = options
-
   if (!target) return console.error("Can't find HTMLELEMENT")
   let inDelay; let outDelay;
+  const flag = ref(false);
 
   if (Array.isArray(delay) && delay.length > 1) {
     // eslint-disable-next-line prefer-destructuring,no-sequences
@@ -38,28 +39,34 @@ const useHover = (options: hoverOptionType, fnF: () => void, fnS: () => void) =>
     // eslint-disable-next-line no-param-reassign
     fnS = debounce(fnS, outDelay)
     target.addEventListener('mousemove', () => {
+      flag.value = true
       fnF()
     })
     target.addEventListener('mouseleave', () => {
+      flag.value = false
       fnS()
     })
   }
   else if (persistent) {
     target.addEventListener('mousemove', () => {
+      flag.value = true
       fnF()
     })
     target.addEventListener('mouseleave', () => {
+      flag.value = false
       fnS()
     })
   } else {
     target.addEventListener('mouseenter', () => {
+      flag.value = true
       fnF()
     })
     target.addEventListener('mouseleave', () => {
+      flag.value = false
       fnS()
     })
   }
-
+  return flag
 }
 
 export default useHover

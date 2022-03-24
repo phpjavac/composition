@@ -10,7 +10,7 @@ import { ref, reactive, onMounted } from 'vue'
 const dynamicComponent = ref(null);
 onMounted(()=>{
         import('@/src/useAwaitDom/demo.vue').then(module => {
-      this.dynamicComponent = "useAwaitDomDemo"
+      dynamicComponent.value = "useAwaitDomDemo"
     })
 }) 
 </script>

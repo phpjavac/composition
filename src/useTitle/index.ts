@@ -1,6 +1,6 @@
 import { ref, watch } from 'vue'
 import { isString, MaybeRef } from '../utils'
-import { ConfigurableDocument, defaultDocument } from '../_configurable'
+import { ConfigurableDocument, defaultDocument } from '../configurable'
 // import { useMutationObserver } from '../useMutationObserver'
 
 export interface UseTitleOptions extends ConfigurableDocument {

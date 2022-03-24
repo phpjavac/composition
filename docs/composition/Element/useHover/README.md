@@ -7,14 +7,17 @@
 import { useHover } from "@lib";
 import { ref, onMounted } from "vue";   
  const divRef = ref()
- const isHovering = useHover(() =>divRef.value);
+ const isHovering = ref()
+ onMounted(() => {
+     isHovering.value = useHover( {target: divRef.value}, () => console.log('移入'), () =>console.log('移出'));
+ })
 </script>
 
 <div>
     <div ref="divRef"
       style="width: 200px; height: 200px; background:pink"
-    >
-    </div>isHovering:<span style="color:red"> {{ isHovering }} </span>
+    ></div>
+    isHovering:<span style="color:red"> {{ isHovering }} </span>
 </div>
 
 ### 代码演示
@@ -30,11 +33,13 @@ import { ref, onMounted } from "vue";
 </template>
 
 <script setup lang='ts'>
-import {useHover} from "zcomposition";
-import { ref } from "vue";
-    const divRef = ref()
-    const isHovering = useHover(() => divRef.value);
-
+import { useHover } from "zcomposition";
+import { ref, onMounted } from "vue";   
+ const divRef = ref()
+ const isHovering = ref()
+ onMounted(() => {
+     isHovering.value = useHover( {target: divRef.value}, () => console.log('移入'), () =>console.log('移出'));
+ })
 </script>
 
 ```

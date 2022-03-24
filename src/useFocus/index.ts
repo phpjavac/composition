@@ -1,6 +1,6 @@
 /* eslint-disable prefer-rest-params */
 /* eslint-disable class-methods-use-this */
-const includes = ['[object HTMLTextAreaElement]', '[object HTMLInputElement]'];
+const includes = ['[object HTMLTextAreaElement]', '[object HTMLInputElement]'] as ('[object HTMLTextAreaElement]' | '[object HTMLInputElement]')[];
 const useFocus = function() {
 
   if(arguments.length !== 2) {

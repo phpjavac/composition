@@ -1,5 +1,5 @@
 import { MaybeRef } from '../utils';
-import { ConfigurableDocument } from '../_configurable';
+import { ConfigurableDocument } from '../configurable';
 export interface UseTitleOptions extends ConfigurableDocument {
     /**
      * Observe `document.title` changes using MutationObserve
