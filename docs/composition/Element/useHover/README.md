@@ -5,7 +5,7 @@
 ## 基本用法,传入Dom元素
 <script setup lang='ts'>
 import { useHover } from "@lib";
-import { Ref, ref, onMounted } from "vue";   
+import { ref, onMounted } from "vue";   
  const divRef = ref()
  const isHovering = ref<boolean>(false)
  onMounted(() => {
