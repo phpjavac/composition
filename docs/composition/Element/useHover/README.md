@@ -5,9 +5,9 @@
 ## 基本用法,传入Dom元素
 <script setup lang='ts'>
 import { useHover } from "@lib";
-import { ref, onMounted } from "vue";   
+import { Ref, ref, onMounted } from "vue";   
  const divRef = ref()
- const isHovering = ref(false) as boolean
+ const isHovering = ref<boolean>(false)
  onMounted(() => {
      isHovering.value = useHover( {target: divRef.value}, () => console.log('移入'), () =>console.log('移出'));
  })
@@ -36,7 +36,7 @@ import { ref, onMounted } from "vue";
 import { useHover } from "zcomposition";
 import { ref, onMounted } from "vue";   
  const divRef = ref()
- const isHovering = ref(false) as boolean
+ const isHovering = ref<boolean>(false)
  onMounted(() => {
      isHovering.value = useHover( {target: divRef.value}, () => console.log('移入'), () =>console.log('移出'));
  })
